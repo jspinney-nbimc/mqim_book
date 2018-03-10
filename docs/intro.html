@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html >
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Quantitative Portfolio Management</title>
+  <meta name="description" content="Class notes for MBA 6693/ADM 4693 - Quantitative Portfolio Management at University of New Brunswick">
+  <meta name="generator" content="bookdown 0.6 and GitBook 2.6.7">
+
+  <meta property="og:title" content="Quantitative Portfolio Management" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="Class notes for MBA 6693/ADM 4693 - Quantitative Portfolio Management at University of New Brunswick" />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Quantitative Portfolio Management" />
+  
+  <meta name="twitter:description" content="Class notes for MBA 6693/ADM 4693 - Quantitative Portfolio Management at University of New Brunswick" />
+  
+
+<meta name="author" content="Jon Spinney">
+
+
+<meta name="date" content="2018-03-10">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  
+  
+<link rel="prev" href="index.html">
+<link rel="next" href="mpt.html">
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code > span.dt { color: #902000; } /* DataType */
+code > span.dv { color: #40a070; } /* DecVal */
+code > span.bn { color: #40a070; } /* BaseN */
+code > span.fl { color: #40a070; } /* Float */
+code > span.ch { color: #4070a0; } /* Char */
+code > span.st { color: #4070a0; } /* String */
+code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code > span.ot { color: #007020; } /* Other */
+code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code > span.fu { color: #06287e; } /* Function */
+code > span.er { color: #ff0000; font-weight: bold; } /* Error */
+code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #880000; } /* Constant */
+code > span.sc { color: #4070a0; } /* SpecialChar */
+code > span.vs { color: #4070a0; } /* VerbatimString */
+code > span.ss { color: #bb6688; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #19177c; } /* Variable */
+code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #666666; } /* Operator */
+code > span.bu { } /* BuiltIn */
+code > span.ex { } /* Extension */
+code > span.pp { color: #bc7a00; } /* Preprocessor */
+code > span.at { color: #7d9029; } /* Attribute */
+code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Quantitative Portfolio Management</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Preliminary Material</a></li>
+<li class="chapter" data-level="2" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i><b>2</b> Introduction</a><ul>
+<li class="chapter" data-level="2.1" data-path="intro.html"><a href="intro.html#commercially-available-textbooks-related-to-quantitative-equity-portfolio-management"><i class="fa fa-check"></i><b>2.1</b> Commercially Available Textbooks Related to Quantitative Equity Portfolio Management</a></li>
+<li class="chapter" data-level="2.2" data-path="intro.html"><a href="intro.html#course-description-and-background-information"><i class="fa fa-check"></i><b>2.2</b> Course Description and Background Information</a></li>
+<li class="chapter" data-level="2.3" data-path="intro.html"><a href="intro.html#introduction-to-r-exploratory-data-analysis"><i class="fa fa-check"></i><b>2.3</b> Introduction to R &amp; Exploratory Data Analysis</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="mpt.html"><a href="mpt.html"><i class="fa fa-check"></i><b>3</b> Modern Portfolio Theory</a><ul>
+<li class="chapter" data-level="3.1" data-path="mpt.html"><a href="mpt.html#markowitz"><i class="fa fa-check"></i><b>3.1</b> Markowitz</a></li>
+<li class="chapter" data-level="3.2" data-path="mpt.html"><a href="mpt.html#capm"><i class="fa fa-check"></i><b>3.2</b> CAPM</a></li>
+<li class="chapter" data-level="3.3" data-path="mpt.html"><a href="mpt.html#apt-multifactor-models"><i class="fa fa-check"></i><b>3.3</b> APT &amp; Multifactor Models</a></li>
+<li class="chapter" data-level="3.4" data-path="mpt.html"><a href="mpt.html#modern-approaches"><i class="fa fa-check"></i><b>3.4</b> Modern Approaches</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="anomalies.html"><a href="anomalies.html"><i class="fa fa-check"></i><b>4</b> Anomalies &amp; Alpha Strategies</a><ul>
+<li class="chapter" data-level="4.1" data-path="anomalies.html"><a href="anomalies.html#early-anomalies-literature"><i class="fa fa-check"></i><b>4.1</b> Early Anomalies Literature</a></li>
+<li class="chapter" data-level="4.2" data-path="anomalies.html"><a href="anomalies.html#fama-french-1990s"><i class="fa fa-check"></i><b>4.2</b> Fama French (1990s)</a></li>
+<li class="chapter" data-level="4.3" data-path="anomalies.html"><a href="anomalies.html#carhart"><i class="fa fa-check"></i><b>4.3</b> Carhart</a></li>
+<li class="chapter" data-level="4.4" data-path="anomalies.html"><a href="anomalies.html#other-factors"><i class="fa fa-check"></i><b>4.4</b> Other Factors</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="forecasting.html"><a href="forecasting.html"><i class="fa fa-check"></i><b>5</b> Forecasting</a><ul>
+<li class="chapter" data-level="5.1" data-path="forecasting.html"><a href="forecasting.html#fractile-zero-investment-portfolios"><i class="fa fa-check"></i><b>5.1</b> Fractile Zero-Investment Portfolios</a></li>
+<li class="chapter" data-level="5.2" data-path="forecasting.html"><a href="forecasting.html#factor-mimicking-portfolios"><i class="fa fa-check"></i><b>5.2</b> Factor Mimicking Portfolios</a></li>
+<li class="chapter" data-level="5.3" data-path="forecasting.html"><a href="forecasting.html#fama-macbeth-regressions"><i class="fa fa-check"></i><b>5.3</b> Fama-Macbeth Regressions</a></li>
+<li class="chapter" data-level="5.4" data-path="forecasting.html"><a href="forecasting.html#optimal-predictors"><i class="fa fa-check"></i><b>5.4</b> Optimal Predictors</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="portopt.html"><a href="portopt.html"><i class="fa fa-check"></i><b>6</b> Portfolio Optimization</a><ul>
+<li class="chapter" data-level="6.1" data-path="portopt.html"><a href="portopt.html#minimum-variance-portfolios"><i class="fa fa-check"></i><b>6.1</b> Minimum Variance Portfolios</a><ul>
+<li class="chapter" data-level="6.1.1" data-path="portopt.html"><a href="portopt.html#case-study-minimum-variance-portfolios"><i class="fa fa-check"></i><b>6.1.1</b> Case Study: Minimum Variance Portfolios</a></li>
+</ul></li>
+<li class="chapter" data-level="6.2" data-path="portopt.html"><a href="portopt.html#constrained-optimization"><i class="fa fa-check"></i><b>6.2</b> Constrained Optimization</a></li>
+<li class="chapter" data-level="6.3" data-path="portopt.html"><a href="portopt.html#active-portfolio-optimization"><i class="fa fa-check"></i><b>6.3</b> Active Portfolio Optimization</a></li>
+<li class="chapter" data-level="6.4" data-path="portopt.html"><a href="portopt.html#modern-optimization"><i class="fa fa-check"></i><b>6.4</b> Modern Optimization</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="risk.html"><a href="risk.html"><i class="fa fa-check"></i><b>7</b> Risk Models</a><ul>
+<li class="chapter" data-level="7.1" data-path="risk.html"><a href="risk.html#risk-measures"><i class="fa fa-check"></i><b>7.1</b> Risk Measures</a></li>
+<li class="chapter" data-level="7.2" data-path="risk.html"><a href="risk.html#covariance-matrices-and-bayesian-shrinkage-models"><i class="fa fa-check"></i><b>7.2</b> Covariance Matrices and Bayesian Shrinkage Models</a></li>
+<li class="chapter" data-level="7.3" data-path="risk.html"><a href="risk.html#principal-components-analysis"><i class="fa fa-check"></i><b>7.3</b> Principal Components Analysis</a></li>
+<li class="chapter" data-level="7.4" data-path="risk.html"><a href="risk.html#fundamental-factor-models"><i class="fa fa-check"></i><b>7.4</b> Fundamental Factor Models</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="pmpt.html"><a href="pmpt.html"><i class="fa fa-check"></i><b>8</b> Post-Modern Portfolio Theory</a><ul>
+<li class="chapter" data-level="8.1" data-path="pmpt.html"><a href="pmpt.html#risk-parity"><i class="fa fa-check"></i><b>8.1</b> Risk Parity</a><ul>
+<li class="chapter" data-level="8.1.1" data-path="pmpt.html"><a href="pmpt.html#inverse-volatility-weighting-naive-risk-parity"><i class="fa fa-check"></i><b>8.1.1</b> Inverse Volatility Weighting (Naive Risk Parity)</a></li>
+<li class="chapter" data-level="8.1.2" data-path="pmpt.html"><a href="pmpt.html#equal-risk-contributions"><i class="fa fa-check"></i><b>8.1.2</b> Equal Risk Contributions</a></li>
+</ul></li>
+<li class="chapter" data-level="8.2" data-path="pmpt.html"><a href="pmpt.html#concentrationdiversification"><i class="fa fa-check"></i><b>8.2</b> Concentration/Diversification</a><ul>
+<li class="chapter" data-level="8.2.1" data-path="pmpt.html"><a href="pmpt.html#most-diversified-portfolio"><i class="fa fa-check"></i><b>8.2.1</b> Most Diversified Portfolio</a></li>
+<li class="chapter" data-level="8.2.2" data-path="pmpt.html"><a href="pmpt.html#hhi-based-deconcentration"><i class="fa fa-check"></i><b>8.2.2</b> HHI Based Deconcentration</a></li>
+</ul></li>
+<li class="chapter" data-level="8.3" data-path="pmpt.html"><a href="pmpt.html#mean-cvar"><i class="fa fa-check"></i><b>8.3</b> Mean-CVaR</a></li>
+<li class="chapter" data-level="8.4" data-path="pmpt.html"><a href="pmpt.html#synthesis-of-pmpt-approaches"><i class="fa fa-check"></i><b>8.4</b> Synthesis of PMPT Approaches</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="appendix1.html"><a href="appendix1.html"><i class="fa fa-check"></i>Appendix 1 - Special Topics</a><ul>
+<li class="chapter" data-level="" data-path="appendix1.html"><a href="appendix1.html#hedge-fund-replication"><i class="fa fa-check"></i>Hedge Fund Replication</a></li>
+<li class="chapter" data-level="" data-path="appendix1.html"><a href="appendix1.html#robustness"><i class="fa fa-check"></i>Robustness</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="appendix2.html"><a href="appendix2.html"><i class="fa fa-check"></i>Appendix 2 - Background Information</a><ul>
+<li class="chapter" data-level="" data-path="appendix2.html"><a href="appendix2.html#matrix-algebra-review"><i class="fa fa-check"></i>Matrix Algebra Review</a><ul>
+<li class="chapter" data-level="" data-path="appendix2.html"><a href="appendix2.html#basic-concepts"><i class="fa fa-check"></i>Basic Concepts</a></li>
+<li class="chapter" data-level="" data-path="appendix2.html"><a href="appendix2.html#inverse-matrices"><i class="fa fa-check"></i>Inverse Matrices</a></li>
+<li class="chapter" data-level="" data-path="appendix2.html"><a href="appendix2.html#sums"><i class="fa fa-check"></i>Sums</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="appendix2.html"><a href="appendix2.html#probability-review"><i class="fa fa-check"></i>Probability Review</a><ul>
+<li class="chapter" data-level="" data-path="appendix2.html"><a href="appendix2.html#probability-distributions-random-variables"><i class="fa fa-check"></i>Probability Distributions &amp; Random Variables</a></li>
+<li class="chapter" data-level="" data-path="appendix2.html"><a href="appendix2.html#rules-of-expectation-variance"><i class="fa fa-check"></i>Rules of Expectation &amp; Variance</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="appendix2.html"><a href="appendix2.html#calculus-review"><i class="fa fa-check"></i>Calculus Review</a><ul>
+<li class="chapter" data-level="" data-path="appendix2.html"><a href="appendix2.html#differentiation-of-vector-matrix-valued-functions"><i class="fa fa-check"></i>Differentiation of Vector &amp; Matrix Valued Functions</a></li>
+<li class="chapter" data-level="" data-path="appendix2.html"><a href="appendix2.html#maximization-minimization"><i class="fa fa-check"></i>Maximization &amp; Minimization</a></li>
+<li class="chapter" data-level="" data-path="appendix2.html"><a href="appendix2.html#constrained-maximization-minimization"><i class="fa fa-check"></i>Constrained Maximization &amp; Minimization</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Quantitative Portfolio Management</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="intro" class="section level1">
+<h1><span class="header-section-number">Chapter 2</span> Introduction</h1>
+<p>This book contains course notes supporting the class MQIM 6604 - Quantitative Portfolio Management in the Master in Quantitative Investment Management (MQIM) at the University of New Brunswick in Fredericton. This book, in addition to the slides and supplementary reading assigned in lectures, are the only material required for the class.</p>
+<p>While there are a plethora of commercially available books related to the field of quantitative equity portfolio management, this book contains a few primary advantages for MQIM students. Namely:</p>
+<ul>
+<li>The book is new, and constantly evolving, allowing it to continually reflect the current practice of quantitative investment management in the field today. While <span class="citation">(Grinold and Kahn <a href="#ref-grinold2000">2000</a>)</span> may be considered the longstanding “bible” of active quantitative equity portfolio management and would be an excellent addition to the bookshelf of any practicing quant, it was last updated nearly 20 years ago.</li>
+<li>The book is targeted to be at exactly the correct level for students in the MQIM program, immediately working with appropriate levels of mathematical sophistication for the technically minded students in the program. Conversely, commercially available texts may be at a level that is too low or two high for the MQIM program.</li>
+<li>The R language (which is the primary language of instruction in the UNB MQIM program) is embedded throughout the book, and indeed the book is written in R using markdown and the Bookdown package <span class="citation">(Xie <a href="#ref-xie2015">2015</a>)</span>, making this the only book on quantitative equity portfolio management to make such extensive use of R.</li>
+</ul>
+<div id="commercially-available-textbooks-related-to-quantitative-equity-portfolio-management" class="section level2">
+<h2><span class="header-section-number">2.1</span> Commercially Available Textbooks Related to Quantitative Equity Portfolio Management</h2>
+<p>Students that are particularly interested in the field (or are looking for additional companion material to help with 6604) could look at any of the following books:</p>
+<p><strong>Active Portfolio Management: A Quantitative Approach for Producing Superior Returns and Controlling Risk</strong> <span class="citation">(Grinold and Kahn <a href="#ref-grinold2000">2000</a>)</span></p>
+<ul>
+<li><a href="https://www.amazon.ca/Active-Portfolio-Management-Quantitative-Controlling/dp/0070248826" class="uri">https://www.amazon.ca/Active-Portfolio-Management-Quantitative-Controlling/dp/0070248826</a></li>
+<li>Generally considered to be the “bible” of quantitative equity portfolio management - contains early references to the authors’ work on the Fundamental Law of Active Management. Essential reading for practicing quants.</li>
+</ul>
+<p><strong>Risk and Asset Allocation</strong> <span class="citation">(Meucci <a href="#ref-meucci2005">2005</a>)</span></p>
+<ul>
+<li><a href="https://www.amazon.ca/Risk-Asset-Allocation-Attilio-Meucci/dp/3642009646/" class="uri">https://www.amazon.ca/Risk-Asset-Allocation-Attilio-Meucci/dp/3642009646/</a></li>
+<li>Quite technical and idiosyncratic in its approach. The author provides a significant amount of Matlab code related to book examples (partially ported to R in the <strong>meucci</strong> packge) and runs an annual 1-week <strong>Advanced Risk and Portfolio Management (“ARPM”)</strong> bootcamp in New York every summer </li>
+</ul>
+<p><strong>Quantitative Equity Portfolio Management: An Active Approach to Portfolio Construction and Management</strong> <span class="citation">(Chincarini and Kim <a href="#ref-chincarini2006">2006</a>)</span></p>
+<ul>
+<li><a href="https://www.amazon.ca/Quantitative-Equity-Portfolio-Management-Construction/dp/0071459391/" class="uri">https://www.amazon.ca/Quantitative-Equity-Portfolio-Management-Construction/dp/0071459391/</a></li>
+<li>Targeted at MBA students.</li>
+</ul>
+<p><strong>Quantitative Equity Portfolio Management: Modern Techniques and Applications</strong> <span class="citation">(Qian, Hua, and Sorensen <a href="#ref-qian2007">2006</a>)</span></p>
+<ul>
+<li><a href="https://www.amazon.ca/Quantitative-Equity-Portfolio-Management-Applications/dp/1584885580/" class="uri">https://www.amazon.ca/Quantitative-Equity-Portfolio-Management-Applications/dp/1584885580/</a></li>
+<li>More advanced and more modern than <span class="citation">(Grinold and Kahn <a href="#ref-grinold2000">2000</a>)</span>, a good read for practicing quants.</li>
+</ul>
+<p><strong>Quantitative Equity Investing: Techniques and Strategies</strong> <span class="citation">(Fabozzi, Focardi, and Kolm <a href="#ref-fabozzi2010">2010</a>)</span></p>
+<ul>
+<li><a href="https://www.amazon.ca/Quantitative-Equity-Investing-Techniques-Strategies/dp/0470262478/" class="uri">https://www.amazon.ca/Quantitative-Equity-Investing-Techniques-Strategies/dp/0470262478/</a></li>
+</ul>
+<p><strong>Modern Investment Management: An Equilibrium Approach</strong> <span class="citation">(Litterman <a href="#ref-litterman2003">2003</a>)</span></p>
+<ul>
+<li><a href="https://www.amazon.ca/Modern-Investment-Management-Equilibrium-Approach/dp/0471124109/" class="uri">https://www.amazon.ca/Modern-Investment-Management-Equilibrium-Approach/dp/0471124109/</a></li>
+<li>Written/edited by Robert Litterman and the (at that time) Quantitative Strategies Group of Goldman Sachs Asset Management.</li>
+</ul>
+<p><strong>Asset Management: A Systematic Approach to Factor Investing</strong> <span class="citation">(Ang <a href="#ref-ang2014">2014</a>)</span></p>
+<ul>
+<li><a href="https://www.amazon.ca/Asset-Management-Systematic-Approach-Investing/dp/0199959323/" class="uri">https://www.amazon.ca/Asset-Management-Systematic-Approach-Investing/dp/0199959323/</a></li>
+<li>The most recent of all the commercially available books on this list, this book is non-technical (appropriate for MBA &amp; business school Undergraduate students) but makes an excellent companion book forMQIM 6604 student for extra explanatory material and practical real-world examples of many applications of factor investing and quantitative approaches to portfolio management in general.</li>
+</ul>
+</div>
+<div id="course-description-and-background-information" class="section level2">
+<h2><span class="header-section-number">2.2</span> Course Description and Background Information</h2>
+<p>TBC</p>
+<p>test table using kable:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">knitr<span class="op">::</span><span class="kw">kable</span>(
+  <span class="kw">head</span>(mtcars[, <span class="dv">1</span><span class="op">:</span><span class="dv">8</span>], <span class="dv">10</span>), <span class="dt">booktabs =</span> <span class="ot">TRUE</span>,
+  <span class="dt">caption =</span> <span class="st">&#39;A table of the first 10 rows of the mtcars data.&#39;</span>
+)</code></pre></div>
+<table>
+<caption><span id="tab:unnamed-chunk-3">Table 2.1: </span>A table of the first 10 rows of the mtcars data.</caption>
+<thead>
+<tr class="header">
+<th></th>
+<th align="right">mpg</th>
+<th align="right">cyl</th>
+<th align="right">disp</th>
+<th align="right">hp</th>
+<th align="right">drat</th>
+<th align="right">wt</th>
+<th align="right">qsec</th>
+<th align="right">vs</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Mazda RX4</td>
+<td align="right">21.0</td>
+<td align="right">6</td>
+<td align="right">160.0</td>
+<td align="right">110</td>
+<td align="right">3.90</td>
+<td align="right">2.620</td>
+<td align="right">16.46</td>
+<td align="right">0</td>
+</tr>
+<tr class="even">
+<td>Mazda RX4 Wag</td>
+<td align="right">21.0</td>
+<td align="right">6</td>
+<td align="right">160.0</td>
+<td align="right">110</td>
+<td align="right">3.90</td>
+<td align="right">2.875</td>
+<td align="right">17.02</td>
+<td align="right">0</td>
+</tr>
+<tr class="odd">
+<td>Datsun 710</td>
+<td align="right">22.8</td>
+<td align="right">4</td>
+<td align="right">108.0</td>
+<td align="right">93</td>
+<td align="right">3.85</td>
+<td align="right">2.320</td>
+<td align="right">18.61</td>
+<td align="right">1</td>
+</tr>
+<tr class="even">
+<td>Hornet 4 Drive</td>
+<td align="right">21.4</td>
+<td align="right">6</td>
+<td align="right">258.0</td>
+<td align="right">110</td>
+<td align="right">3.08</td>
+<td align="right">3.215</td>
+<td align="right">19.44</td>
+<td align="right">1</td>
+</tr>
+<tr class="odd">
+<td>Hornet Sportabout</td>
+<td align="right">18.7</td>
+<td align="right">8</td>
+<td align="right">360.0</td>
+<td align="right">175</td>
+<td align="right">3.15</td>
+<td align="right">3.440</td>
+<td align="right">17.02</td>
+<td align="right">0</td>
+</tr>
+<tr class="even">
+<td>Valiant</td>
+<td align="right">18.1</td>
+<td align="right">6</td>
+<td align="right">225.0</td>
+<td align="right">105</td>
+<td align="right">2.76</td>
+<td align="right">3.460</td>
+<td align="right">20.22</td>
+<td align="right">1</td>
+</tr>
+<tr class="odd">
+<td>Duster 360</td>
+<td align="right">14.3</td>
+<td align="right">8</td>
+<td align="right">360.0</td>
+<td align="right">245</td>
+<td align="right">3.21</td>
+<td align="right">3.570</td>
+<td align="right">15.84</td>
+<td align="right">0</td>
+</tr>
+<tr class="even">
+<td>Merc 240D</td>
+<td align="right">24.4</td>
+<td align="right">4</td>
+<td align="right">146.7</td>
+<td align="right">62</td>
+<td align="right">3.69</td>
+<td align="right">3.190</td>
+<td align="right">20.00</td>
+<td align="right">1</td>
+</tr>
+<tr class="odd">
+<td>Merc 230</td>
+<td align="right">22.8</td>
+<td align="right">4</td>
+<td align="right">140.8</td>
+<td align="right">95</td>
+<td align="right">3.92</td>
+<td align="right">3.150</td>
+<td align="right">22.90</td>
+<td align="right">1</td>
+</tr>
+<tr class="even">
+<td>Merc 280</td>
+<td align="right">19.2</td>
+<td align="right">6</td>
+<td align="right">167.6</td>
+<td align="right">123</td>
+<td align="right">3.92</td>
+<td align="right">3.440</td>
+<td align="right">18.30</td>
+<td align="right">1</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="introduction-to-r-exploratory-data-analysis" class="section level2">
+<h2><span class="header-section-number">2.3</span> Introduction to R &amp; Exploratory Data Analysis</h2>
+<p>TBC</p>
+
+</div>
+</div>
+<h3>References</h3>
+<div id="refs" class="references">
+<div id="ref-grinold2000">
+<p>Grinold, R. C., and R. N. Kahn. 2000. <em>Active Portfolio Management: A Quantitative Approach for Producing Superior Returns and Controlling Risk</em>. 2nd ed. New York: McGraw-Hill Education.</p>
+</div>
+<div id="ref-xie2015">
+<p>Xie, Yihui. 2015. <em>Dynamic Documents with R and Knitr</em>. 2nd ed. Boca Raton, Florida: Chapman; Hall/CRC. <a href="http://yihui.name/knitr/" class="uri">http://yihui.name/knitr/</a>.</p>
+</div>
+<div id="ref-meucci2005">
+<p>Meucci, A. 2005. <em>Risk and Asset Allocation</em>. 1st ed. New York: Springer.</p>
+</div>
+<div id="ref-chincarini2006">
+<p>Chincarini, L. B., and D. Kim. 2006. <em>Quantitative Equity Portfolio Management: An Active Approach to Portfolio Construction and Management</em>. 1st ed. New York: McGraw-Hill Education.</p>
+</div>
+<div id="ref-qian2007">
+<p>Qian, E. E., R. H. Hua, and E. H. Sorensen. 2006. <em>Quantitative Equity Portfolio Management: Modern Techniques and Applications</em>. 1st ed. New York: Chapman; Hall/CRC.</p>
+</div>
+<div id="ref-fabozzi2010">
+<p>Fabozzi, F. J., S. M. Focardi, and P. N. Kolm. 2010. <em>Quantitative Equity Investing: Techniques and Strategies</em>. 1st ed. New York: Wiley.</p>
+</div>
+<div id="ref-litterman2003">
+<p>Litterman, B. 2003. <em>Modern Investment Management: An Equilibrium Approach</em>. 1st ed. New York: Wiley.</p>
+</div>
+<div id="ref-ang2014">
+<p>Ang, A. 2014. <em>Asset Management: A Systematic Approach to Factor Investing</em>. 1st ed. New York: Oxford University Press.</p>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="index.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="mpt.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"google": false,
+"weibo": false,
+"instapper": false,
+"vk": false,
+"all": ["facebook", "google", "twitter", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/rstudio/bookdown-demo/edit/master/01-intro.Rmd",
+"text": "Edit"
+},
+"download": ["mqim_book.pdf", "mqim_book.epub"],
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "";
+    if (src === "" || src === "true") src = "https://cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:" && /^https?:/.test(src))
+      src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

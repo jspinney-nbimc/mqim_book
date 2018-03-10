@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html >
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Quantitative Portfolio Management</title>
+  <meta name="description" content="Class notes for MBA 6693/ADM 4693 - Quantitative Portfolio Management at University of New Brunswick">
+  <meta name="generator" content="bookdown 0.6 and GitBook 2.6.7">
+
+  <meta property="og:title" content="Quantitative Portfolio Management" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="Class notes for MBA 6693/ADM 4693 - Quantitative Portfolio Management at University of New Brunswick" />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Quantitative Portfolio Management" />
+  
+  <meta name="twitter:description" content="Class notes for MBA 6693/ADM 4693 - Quantitative Portfolio Management at University of New Brunswick" />
+  
+
+<meta name="author" content="Jon Spinney">
+
+
+<meta name="date" content="2018-03-10">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  
+  
+<link rel="prev" href="appendix1.html">
+<link rel="next" href="references.html">
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code > span.dt { color: #902000; } /* DataType */
+code > span.dv { color: #40a070; } /* DecVal */
+code > span.bn { color: #40a070; } /* BaseN */
+code > span.fl { color: #40a070; } /* Float */
+code > span.ch { color: #4070a0; } /* Char */
+code > span.st { color: #4070a0; } /* String */
+code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code > span.ot { color: #007020; } /* Other */
+code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code > span.fu { color: #06287e; } /* Function */
+code > span.er { color: #ff0000; font-weight: bold; } /* Error */
+code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #880000; } /* Constant */
+code > span.sc { color: #4070a0; } /* SpecialChar */
+code > span.vs { color: #4070a0; } /* VerbatimString */
+code > span.ss { color: #bb6688; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #19177c; } /* Variable */
+code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #666666; } /* Operator */
+code > span.bu { } /* BuiltIn */
+code > span.ex { } /* Extension */
+code > span.pp { color: #bc7a00; } /* Preprocessor */
+code > span.at { color: #7d9029; } /* Attribute */
+code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Quantitative Portfolio Management</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Preliminary Material</a></li>
+<li class="chapter" data-level="2" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i><b>2</b> Introduction</a><ul>
+<li class="chapter" data-level="2.1" data-path="intro.html"><a href="intro.html#commercially-available-textbooks-related-to-quantitative-equity-portfolio-management"><i class="fa fa-check"></i><b>2.1</b> Commercially Available Textbooks Related to Quantitative Equity Portfolio Management</a></li>
+<li class="chapter" data-level="2.2" data-path="intro.html"><a href="intro.html#course-description-and-background-information"><i class="fa fa-check"></i><b>2.2</b> Course Description and Background Information</a></li>
+<li class="chapter" data-level="2.3" data-path="intro.html"><a href="intro.html#introduction-to-r-exploratory-data-analysis"><i class="fa fa-check"></i><b>2.3</b> Introduction to R &amp; Exploratory Data Analysis</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="mpt.html"><a href="mpt.html"><i class="fa fa-check"></i><b>3</b> Modern Portfolio Theory</a><ul>
+<li class="chapter" data-level="3.1" data-path="mpt.html"><a href="mpt.html#markowitz"><i class="fa fa-check"></i><b>3.1</b> Markowitz</a></li>
+<li class="chapter" data-level="3.2" data-path="mpt.html"><a href="mpt.html#capm"><i class="fa fa-check"></i><b>3.2</b> CAPM</a></li>
+<li class="chapter" data-level="3.3" data-path="mpt.html"><a href="mpt.html#apt-multifactor-models"><i class="fa fa-check"></i><b>3.3</b> APT &amp; Multifactor Models</a></li>
+<li class="chapter" data-level="3.4" data-path="mpt.html"><a href="mpt.html#modern-approaches"><i class="fa fa-check"></i><b>3.4</b> Modern Approaches</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="anomalies.html"><a href="anomalies.html"><i class="fa fa-check"></i><b>4</b> Anomalies &amp; Alpha Strategies</a><ul>
+<li class="chapter" data-level="4.1" data-path="anomalies.html"><a href="anomalies.html#early-anomalies-literature"><i class="fa fa-check"></i><b>4.1</b> Early Anomalies Literature</a></li>
+<li class="chapter" data-level="4.2" data-path="anomalies.html"><a href="anomalies.html#fama-french-1990s"><i class="fa fa-check"></i><b>4.2</b> Fama French (1990s)</a></li>
+<li class="chapter" data-level="4.3" data-path="anomalies.html"><a href="anomalies.html#carhart"><i class="fa fa-check"></i><b>4.3</b> Carhart</a></li>
+<li class="chapter" data-level="4.4" data-path="anomalies.html"><a href="anomalies.html#other-factors"><i class="fa fa-check"></i><b>4.4</b> Other Factors</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="forecasting.html"><a href="forecasting.html"><i class="fa fa-check"></i><b>5</b> Forecasting</a><ul>
+<li class="chapter" data-level="5.1" data-path="forecasting.html"><a href="forecasting.html#fractile-zero-investment-portfolios"><i class="fa fa-check"></i><b>5.1</b> Fractile Zero-Investment Portfolios</a></li>
+<li class="chapter" data-level="5.2" data-path="forecasting.html"><a href="forecasting.html#factor-mimicking-portfolios"><i class="fa fa-check"></i><b>5.2</b> Factor Mimicking Portfolios</a></li>
+<li class="chapter" data-level="5.3" data-path="forecasting.html"><a href="forecasting.html#fama-macbeth-regressions"><i class="fa fa-check"></i><b>5.3</b> Fama-Macbeth Regressions</a></li>
+<li class="chapter" data-level="5.4" data-path="forecasting.html"><a href="forecasting.html#optimal-predictors"><i class="fa fa-check"></i><b>5.4</b> Optimal Predictors</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="portopt.html"><a href="portopt.html"><i class="fa fa-check"></i><b>6</b> Portfolio Optimization</a><ul>
+<li class="chapter" data-level="6.1" data-path="portopt.html"><a href="portopt.html#minimum-variance-portfolios"><i class="fa fa-check"></i><b>6.1</b> Minimum Variance Portfolios</a><ul>
+<li class="chapter" data-level="6.1.1" data-path="portopt.html"><a href="portopt.html#case-study-minimum-variance-portfolios"><i class="fa fa-check"></i><b>6.1.1</b> Case Study: Minimum Variance Portfolios</a></li>
+</ul></li>
+<li class="chapter" data-level="6.2" data-path="portopt.html"><a href="portopt.html#constrained-optimization"><i class="fa fa-check"></i><b>6.2</b> Constrained Optimization</a></li>
+<li class="chapter" data-level="6.3" data-path="portopt.html"><a href="portopt.html#active-portfolio-optimization"><i class="fa fa-check"></i><b>6.3</b> Active Portfolio Optimization</a></li>
+<li class="chapter" data-level="6.4" data-path="portopt.html"><a href="portopt.html#modern-optimization"><i class="fa fa-check"></i><b>6.4</b> Modern Optimization</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="risk.html"><a href="risk.html"><i class="fa fa-check"></i><b>7</b> Risk Models</a><ul>
+<li class="chapter" data-level="7.1" data-path="risk.html"><a href="risk.html#risk-measures"><i class="fa fa-check"></i><b>7.1</b> Risk Measures</a></li>
+<li class="chapter" data-level="7.2" data-path="risk.html"><a href="risk.html#covariance-matrices-and-bayesian-shrinkage-models"><i class="fa fa-check"></i><b>7.2</b> Covariance Matrices and Bayesian Shrinkage Models</a></li>
+<li class="chapter" data-level="7.3" data-path="risk.html"><a href="risk.html#principal-components-analysis"><i class="fa fa-check"></i><b>7.3</b> Principal Components Analysis</a></li>
+<li class="chapter" data-level="7.4" data-path="risk.html"><a href="risk.html#fundamental-factor-models"><i class="fa fa-check"></i><b>7.4</b> Fundamental Factor Models</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="pmpt.html"><a href="pmpt.html"><i class="fa fa-check"></i><b>8</b> Post-Modern Portfolio Theory</a><ul>
+<li class="chapter" data-level="8.1" data-path="pmpt.html"><a href="pmpt.html#risk-parity"><i class="fa fa-check"></i><b>8.1</b> Risk Parity</a><ul>
+<li class="chapter" data-level="8.1.1" data-path="pmpt.html"><a href="pmpt.html#inverse-volatility-weighting-naive-risk-parity"><i class="fa fa-check"></i><b>8.1.1</b> Inverse Volatility Weighting (Naive Risk Parity)</a></li>
+<li class="chapter" data-level="8.1.2" data-path="pmpt.html"><a href="pmpt.html#equal-risk-contributions"><i class="fa fa-check"></i><b>8.1.2</b> Equal Risk Contributions</a></li>
+</ul></li>
+<li class="chapter" data-level="8.2" data-path="pmpt.html"><a href="pmpt.html#concentrationdiversification"><i class="fa fa-check"></i><b>8.2</b> Concentration/Diversification</a><ul>
+<li class="chapter" data-level="8.2.1" data-path="pmpt.html"><a href="pmpt.html#most-diversified-portfolio"><i class="fa fa-check"></i><b>8.2.1</b> Most Diversified Portfolio</a></li>
+<li class="chapter" data-level="8.2.2" data-path="pmpt.html"><a href="pmpt.html#hhi-based-deconcentration"><i class="fa fa-check"></i><b>8.2.2</b> HHI Based Deconcentration</a></li>
+</ul></li>
+<li class="chapter" data-level="8.3" data-path="pmpt.html"><a href="pmpt.html#mean-cvar"><i class="fa fa-check"></i><b>8.3</b> Mean-CVaR</a></li>
+<li class="chapter" data-level="8.4" data-path="pmpt.html"><a href="pmpt.html#synthesis-of-pmpt-approaches"><i class="fa fa-check"></i><b>8.4</b> Synthesis of PMPT Approaches</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="appendix1.html"><a href="appendix1.html"><i class="fa fa-check"></i>Appendix 1 - Special Topics</a><ul>
+<li class="chapter" data-level="" data-path="appendix1.html"><a href="appendix1.html#hedge-fund-replication"><i class="fa fa-check"></i>Hedge Fund Replication</a></li>
+<li class="chapter" data-level="" data-path="appendix1.html"><a href="appendix1.html#robustness"><i class="fa fa-check"></i>Robustness</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="appendix2.html"><a href="appendix2.html"><i class="fa fa-check"></i>Appendix 2 - Background Information</a><ul>
+<li class="chapter" data-level="" data-path="appendix2.html"><a href="appendix2.html#matrix-algebra-review"><i class="fa fa-check"></i>Matrix Algebra Review</a><ul>
+<li class="chapter" data-level="" data-path="appendix2.html"><a href="appendix2.html#basic-concepts"><i class="fa fa-check"></i>Basic Concepts</a></li>
+<li class="chapter" data-level="" data-path="appendix2.html"><a href="appendix2.html#inverse-matrices"><i class="fa fa-check"></i>Inverse Matrices</a></li>
+<li class="chapter" data-level="" data-path="appendix2.html"><a href="appendix2.html#sums"><i class="fa fa-check"></i>Sums</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="appendix2.html"><a href="appendix2.html#probability-review"><i class="fa fa-check"></i>Probability Review</a><ul>
+<li class="chapter" data-level="" data-path="appendix2.html"><a href="appendix2.html#probability-distributions-random-variables"><i class="fa fa-check"></i>Probability Distributions &amp; Random Variables</a></li>
+<li class="chapter" data-level="" data-path="appendix2.html"><a href="appendix2.html#rules-of-expectation-variance"><i class="fa fa-check"></i>Rules of Expectation &amp; Variance</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="appendix2.html"><a href="appendix2.html#calculus-review"><i class="fa fa-check"></i>Calculus Review</a><ul>
+<li class="chapter" data-level="" data-path="appendix2.html"><a href="appendix2.html#differentiation-of-vector-matrix-valued-functions"><i class="fa fa-check"></i>Differentiation of Vector &amp; Matrix Valued Functions</a></li>
+<li class="chapter" data-level="" data-path="appendix2.html"><a href="appendix2.html#maximization-minimization"><i class="fa fa-check"></i>Maximization &amp; Minimization</a></li>
+<li class="chapter" data-level="" data-path="appendix2.html"><a href="appendix2.html#constrained-maximization-minimization"><i class="fa fa-check"></i>Constrained Maximization &amp; Minimization</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Quantitative Portfolio Management</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="appendix2" class="section level1 unnumbered">
+<h1>Appendix 2 - Background Information</h1>
+<div id="matrix-algebra-review" class="section level2 unnumbered">
+<h2>Matrix Algebra Review</h2>
+<p>Basic portfolio mathematics is much easier to understand (and write clearly) if the reader has understanding of some simple matrix algebra techniques. For example, the variance <span class="math inline">\(\sigma_p^2\)</span> of portfolio of two assets written out in fully expanded form is often expressed as the sum of three separate terms:</p>
+<span class="math display">\[\begin{equation}
+\sigma_p^2 = \omega_1^2 \sigma_1^2 + \omega_2^2 \sigma_2^2 + 2 \omega_1 \omega_2 \sigma_2 \sigma_2 \rho_{1,2}
+\end{equation}\]</span>
+<p>For a three asset portfolio, we need to take the sum of six separate terms (in fact, for <span class="math inline">\(n\)</span> assets, we would have to take the sum of <span class="math inline">\(\frac{n(n+1)}{2}\)</span> terms). Conversely, in matrix language this would be written as simply <span class="math inline">\(\sigma_p^2 = \omega&#39; \Sigma \omega\)</span> irrespective of the number of assets in the portfolio.</p>
+<p>This appendix covers the very basics of matrix mathematics required to understand the above and succeeed in this class - including basic matrix computational techniques and an introduction to finding inverse matrices. Further coverage is available in Dr. Eric Zivot’s <em>Matrix Algebra Review</em> available at , or alternatively for a textbook treatment, the first few chapters of Chiang et al <em>Fundamental Methods of Mathematical Economics</em> contains most of what would be necessary for this course.</p>
+<div id="basic-concepts" class="section level3 unnumbered">
+<h3>Basic Concepts</h3>
+<p>Matrix addition is defined for same-dimension matrices:</p>
+<p><span class="math display">\[
+\begin{bmatrix} 1 &amp; 4 \\ 3 &amp; 7 \end{bmatrix} + 
+\begin{bmatrix} 2 &amp; 3 \\ 1 &amp; 1 \end{bmatrix} = 
+\begin{bmatrix} 3 &amp; 7 \\ 4 &amp; 8 \end{bmatrix}
+\]</span></p>
+<p>A matrix can be multiplied by a scalar by multiplying that scalar by each element of the matrix:</p>
+<p><span class="math display">\[
+2 \times 
+\begin{bmatrix} 2 &amp; 3 \\ 1 &amp; 1 \end{bmatrix} = 
+\begin{bmatrix} 4 &amp; 6 \\ 2 &amp; 2 \end{bmatrix}
+\]</span></p>
+<p>The dot-product of two conformable vectors is the sum of the corresponding elements multiplied together:</p>
+<p><span class="math display">\[
+\begin{bmatrix} 1 &amp; 4  \end{bmatrix} \times 
+\begin{bmatrix} 2 \\ 1 \end{bmatrix} = 
+1 \times 2 + 4 \times 1 =
+6
+\]</span></p>
+<p>Matrix multiplication is defined in a similar way, in that matrices are conformable when the number of columns in the first matrix is the same as the number of rows in the second:\</p>
+<p><span class="math display">\[
+\begin{bmatrix} 1 &amp; 4 \\ 3 &amp; 7 \end{bmatrix} \times 
+\begin{bmatrix} 2 &amp; 3 \\ 1 &amp; 1 \end{bmatrix} = 
+\begin{bmatrix} 1 \times 2 + 4 \times 1 &amp; 1 \times 3 + 4 \times 1 \\ 3 \times 2 + 7 \times 1 &amp; 3 \times 3 + 7 \times 1 \end{bmatrix} = 
+\begin{bmatrix} 6 &amp; 7 \\ 13 &amp; 16 \end{bmatrix}
+\]</span></p>
+<p>Division of matrices is not concept that is defined, although a similar idea is contained within the concept of inverse matrices.</p>
+</div>
+<div id="inverse-matrices" class="section level3 unnumbered">
+<h3>Inverse Matrices</h3>
+<p>The Identity Matrix <span class="math inline">\(I\)</span> is simply a matrix with 1’s in the diagonal elements and 0’s elsewhere:</p>
+<p><span class="math display">\[
+\begin{bmatrix} 1 &amp; 0 &amp; 0 \\ 0 &amp; 1 &amp; 0 \\ 0 &amp; 0 &amp; 1 \end{bmatrix}
+\]</span></p>
+<p>If you check, you can see that any matrix <span class="math inline">\(X\)</span> multiplied with the Identity matrix results in the original matrix <span class="math inline">\(X\)</span> - that is, <span class="math inline">\(XI = IX = X\)</span> and <span class="math inline">\(II = I\)</span>. Another interesting matrix is that of the Inverse matrix. For any matrix <span class="math inline">\(X\)</span>, its inverse is denoted <span class="math inline">\(X^{-1}\)</span>, and an any matrix multiplied by its inverse results in the Identity Matrix - that is, <span class="math inline">\(XX^{-1} = X^{-1}X = I\)</span>. This is therefore analogous to division for matrices, and will prove to be useful.</p>
+<p>Now, consider a system of equations - three equations and three unknowns - below:</p>
+<span class="math display">\[\begin{align*} 
+3x_1 + 5x_2 + x_3 &amp;= 29 \\ 
+7x_1 + 2x_2 + 4x_3 &amp;= 60 \\ 
+-6x_1 + 3x_2 + 2x_3 &amp;= -4 
+\end{align*}\]</span>
+<p>How can we solve this system of equations (that is, find the values of <span class="math inline">\(x_1, x_2, x_3\)</span> that make the left and right hand sides equal)? The method of Gauss-Jordan elimination is often taught, but this is tedious even for <span class="math inline">\(3 \times 3\)</span> systems (there are shortcut methods for <span class="math inline">\(2 \times 2\)</span> matrices), and so we ignore the details behind it and skip forward to computational implementations. It turns out that we can re-write the system equations as follows in matrix form, and that through the use of the inverse matrix, we can easily solve such a system. If we write:</p>
+<p><span class="math display">\[
+A = \begin{bmatrix} 3 &amp; 5 &amp; 1 \\ 7 &amp; 2 &amp; 4 \\ -6 &amp; 3 &amp; 2\end{bmatrix}  
+x = \begin{bmatrix} x_1  \\ x_2 \\ x_3 \end{bmatrix} 
+b = \begin{bmatrix} 29 \\ 60 \\ 4 \end{bmatrix}
+\]</span></p>
+<p>Then the equivalent system in matrix form is written <span class="math inline">\(Ax = b\)</span>. The question is how to find the values of <span class="math inline">\(x\)</span> that make <span class="math inline">\(Ax = b\)</span>. Because of the properties of the Identity Matrix <span class="math inline">\(I\)</span> and the Inverse Matrix we defined above, we are able to take the following steps:</p>
+<span class="math display">\[\begin{align*}
+Ax &amp;= b \\
+A^{-1}Ax &amp;= A^{-1}b \\
+Ix &amp;= A^{-1}b\\
+x &amp;= A^{-1}b
+\end{align*}\]</span>
+<p>And so we can solve any such system of equations (provided a solution exists, which is essentially equivalent to the existence of the Inverse Matrix for the Matrix <span class="math inline">\(A\)</span>) by simply pre-multiplying the <span class="math inline">\(b\)</span> vector by the matrix <span class="math inline">\(A^{-1}\)</span>.</p>
+<p>Note that in R, it is often recommended to use the  function to find the matrix inverse. You can verify the above in R as follows:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">(<span class="dt">A =</span> <span class="kw">matrix</span>(<span class="kw">c</span>(<span class="dv">3</span>, <span class="dv">5</span>, <span class="dv">1</span>, <span class="dv">7</span>, <span class="dv">2</span>, <span class="dv">4</span>, <span class="op">-</span><span class="dv">6</span>, <span class="dv">3</span>, <span class="dv">2</span>),<span class="dt">nrow=</span><span class="dv">3</span>,<span class="dt">byrow=</span>T))</code></pre></div>
+<pre><code>##      [,1] [,2] [,3]
+## [1,]    3    5    1
+## [2,]    7    2    4
+## [3,]   -6    3    2</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">(<span class="dt">b =</span> <span class="kw">matrix</span>(<span class="kw">c</span>(<span class="dv">29</span>,<span class="dv">60</span>,<span class="op">-</span><span class="dv">4</span>),<span class="dt">nrow=</span><span class="dv">3</span>,<span class="dt">byrow=</span>T))</code></pre></div>
+<pre><code>##      [,1]
+## [1,]   29
+## [2,]   60
+## [3,]   -4</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">(A.inv &lt;-<span class="st"> </span><span class="kw">solve</span>(A))</code></pre></div>
+<pre><code>##            [,1]        [,2]        [,3]
+## [1,]  0.0441989  0.03867403 -0.09944751
+## [2,]  0.2099448 -0.06629834  0.02762431
+## [3,] -0.1823204  0.21546961  0.16022099</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">(x &lt;-<span class="st"> </span>A.inv <span class="op">%*%</span><span class="st"> </span>b)</code></pre></div>
+<pre><code>##      [,1]
+## [1,]    4
+## [2,]    2
+## [3,]    7</code></pre>
+<p>And in fact we get the proper solution of <span class="math inline">\(x = (4, 2, 7)\)</span>, that is, <span class="math inline">\(x_1 = 4, x_2 = 2, x_3 = 7\)</span>.</p>
+</div>
+<div id="sums" class="section level3 unnumbered">
+<h3>Sums</h3>
+<p>However, despite the fact that we will use matrices whenever appropriate, there are times when it is useful or more intuitive to use sums instead. For example, the sum of all integers from 1 to 100 could be written in summation notation as:</p>
+<span class="math display">\[\begin{align*}
+1 + 2 + ... + 100 = \displaystyle\sum_{i=1}^{100} i
+\end{align*}\]</span>
+<p>Often, expressions can be written equivalently suing summation notation or using matrix notation, and we will often find summation notation convenient, particularly when encountering concepts like risk decomposition for the first time. For the purposes of this text, it will be helpful to remember that:</p>
+<ul>
+<li><span class="math inline">\(\textbf{c}&#39;\textbf{x} = \displaystyle\sum_{i=1}^{n} c_i x_i\)</span> when  and  are vectors of length <span class="math inline">\(n\)</span></li>
+<li><span class="math inline">\(\textbf{c}&#39; \textbf{X} \textbf{c} = \displaystyle\sum_{i=1}^{n} \displaystyle\sum_{j=1}^{n} c_i c_j X_{i,j}\)</span> when  is a vector of length <span class="math inline">\(n\)</span> and <span class="math inline">\(X\)</span> is an <span class="math inline">\(n \times n\)</span> matrix</li>
+</ul>
+</div>
+</div>
+<div id="probability-review" class="section level2 unnumbered">
+<h2>Probability Review</h2>
+<p>This section covers only the bare minimum of the very basics of probability and expectation that is needed to complete this course. For a good probability review that does assume some prior knowledge, consult Eric Zivot’s <em>Probability Review</em> available at . For more in depth coverage beginning with the basics in a textbook-like format, Grinstead and Snell’s <em>Introduction to Probability</em> <span class="citation">(Grinstead and Snell <a href="#ref-gs2006">2006</a>)</span> is a good choice and is available free online.</p>
+<div id="probability-distributions-random-variables" class="section level3 unnumbered">
+<h3>Probability Distributions &amp; Random Variables</h3>
+<p>A Random Variable <span class="math inline">\(X\)</span> (hereafter: R.V.) is a function that maps each outcome from a sample space into a real number. For example, in the case of tossing a regular 6-sided die, the R.V. could take the values (1, 2, 3, 4, 5, 6).</p>
+<p>A Probability Mass Function (hereafter: PMF) is a function <span class="math inline">\(f_X(x)\)</span> that maps the values of a R.V. <span class="math inline">\(X\)</span> on to numbers between 0 and 1, inclusive. That is, the PMF gives the probability of the outcome of the R.V. occurring:</p>
+<span class="math display">\[\begin{equation}
+f_X(x) = \mathbb{P}(X = x)
+\end{equation}\]</span>
+<p>Which can be read as “the probability that the R.V. X takes on the value <span class="math inline">\(x\)</span>” (there are similar definitions for continuous R.V.’s, although we ignore them for this class). Using this definition, we can also define the cumulative probability mass as:</p>
+<span class="math display">\[\begin{equation}
+F_X(x) = \sum\limits_{i=1}^n \mathbb{P}(X = x_i)
+\end{equation}\]</span>
+<p>Where the total sum of all possible non-overlapping events in the sample space amounts to <span class="math inline">\(\mathbb{P}(\Omega) = 1\)</span>.</p>
+</div>
+<div id="rules-of-expectation-variance" class="section level3 unnumbered">
+<h3>Rules of Expectation &amp; Variance</h3>
+<p>For a discrete random variable, we interpret the Expected Value (<span class="math inline">\(\mathbb{E}\)</span>) of that random variable to be its average value in repeated sampling, and it is defined as the probability weighted sum of all possible outcomes. In mathematical notation, the expectation of the R.V. <span class="math inline">\(X\)</span> is:</p>
+<span class="math display">\[\begin{equation}
+\mathbb{E}X = \sum\limits_{i=1}^n x_i * \mathbb{P}(X=x_i)
+\end{equation}\]</span>
+<p>For <span class="math inline">\(n\)</span> equally likely events, this can be simplified to:</p>
+<span class="math display">\[\begin{equation}
+\mathbb{E}X = \frac{1}{n} * (\sum\limits_{i=1}^n x_i)
+\end{equation}\]</span>
+<p>For example, if we define a random variable <span class="math inline">\(X\)</span> that pays $1 if a (fair) coin comes up as heads, and -$1 if the coin comes up as tails, then the expected value of that random variable is:</p>
+<span class="math display">\[\begin{align*}
+\mathbb{E}(X) &amp;= \frac{1}{2}*1 + \frac{1}{2}*(-1)\\
+&amp;= \frac{1}{2} * (1 + (-1))\\
+&amp;= 0\\
+\end{align*}\]</span>
+<p>There are various rules of expectations that we should know:</p>
+<ul>
+<li>The expected value of a constant <span class="math inline">\(c\)</span> is that constant: <span class="math inline">\(\mathbb{E}(c) = c\)</span></li>
+<li>The expected value of a random variable <span class="math inline">\(X\)</span> plus a constant <span class="math inline">\(c\)</span> is the expected value of the random variable plus the constant: <span class="math inline">\(\mathbb{E}(X + c) = \mathbb{E}(X) + c\)</span></li>
+<li>The expected value of a constant <span class="math inline">\(a\)</span> multiplied by a random variable <span class="math inline">\(X\)</span> is the constant multiplied by the expectation of the random variable: <span class="math inline">\(\mathbb{E}(aX) = a\mathbb{E}(X)\)</span>\</li>
+</ul>
+<p>In addition, there are other rules of expectation that are important to know, but not necessarily for this course, and so they are omitted. However, we also need to be aware of some similar rules or properties for variance and co-variance. Recall that the definition of the variance of a random variable is:</p>
+<span class="math display">\[\begin{equation}
+Var(X) = \mathbb{E}[(X - \mu_X)^2]
+\end{equation}\]</span>
+<p>Properties:</p>
+<ul>
+<li><span class="math inline">\(Var(X + c) = Var(X)\)</span></li>
+<li><span class="math inline">\(Var(aX) = a^2 Var(X)\)</span>\</li>
+</ul>
+<p>And likewise, the co-variance of two discrete random variables <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> is:</p>
+<span class="math display">\[\begin{equation}
+Cov(X,Y) = \mathbb{E}[(X-\mu_X)(Y-\mu_Y)]
+\end{equation}\]</span>
+<p>For which the following properties exist:</p>
+<ul>
+<li><span class="math inline">\(Cov(X+a,Y+b) = Cov(X,Y)\)</span></li>
+<li><span class="math inline">\(Cov(aX,bY) = abCov(X,Y)\)</span>\</li>
+</ul>
+<p>And this in turn allows us to define the following rules:</p>
+<ul>
+<li><span class="math inline">\(Var(X + Y) = Var(X) + Var(Y) + 2*Cov(X,Y)\)</span></li>
+<li><span class="math inline">\(Var(\omega_1 X + (1-\omega_1)Y) = \omega_1^2 Var(X) + (1 - \omega_1)^2 Var(Y) + 2* \omega_1 (1 - \omega_1) Cov(X,Y)\)</span></li>
+</ul>
+<p>Rule 2 should look familiar to anyone who has seen the expression for the variance of a 2 asset portfolio.</p>
+<p>The variance of a random variable <span class="math inline">\(X\)</span> is often denoted as <span class="math inline">\(\sigma_X^2\)</span> in many applications, and we should remember that the standard deviation is just the square root of the variance <span class="math inline">\(\sigma_X = \sqrt{Var(X)}\)</span>. Finally, note that the correlation coefficient <span class="math inline">\(\rho\)</span> is defined as:</p>
+<span class="math display">\[\begin{equation}
+\rho_{X,Y} = \frac{Cov(X,Y)}{\sqrt{Var(X)Var(Y)}}
+\end{equation}\]</span>
+</div>
+</div>
+<div id="calculus-review" class="section level2 unnumbered">
+<h2>Calculus Review</h2>
+<p>In this course, we use calculus primarily to motivate the concept of portfolio optimization. Consequently we are concerned primarily with the concept of the derivative (of multivariate functions) and of the techniques of optimization. These topics are briefly reviewed here here in a highly informal/non-rigorous way. For a more complete but easy to follow treatment of some applications that are necessary for this class, please consult a textbook such as Chiang and Wainwright’s <em>Fundamental Methods of Mathematical Economics</em>.</p>
+<div id="differentiation-of-vector-matrix-valued-functions" class="section level3 unnumbered">
+<h3>Differentiation of Vector &amp; Matrix Valued Functions</h3>
+<p>For functions of one variable, there are standard computational techniques for obtaining derivatives. For example, for powers of <span class="math inline">\(x\)</span>:</p>
+<span class="math display">\[\begin{align*}
+f(x) &amp;= 3x^3 + 2x - 8\\
+f&#39;(x) &amp;= 9x^2 + 2\\
+f&#39;&#39;(x) &amp;= 18x\\
+f^{(3)}(x) &amp;= 18
+\end{align*}\]</span>
+<p>More a slightly more complicated function such as <span class="math inline">\(y = 4(x^2-2)^3\)</span>, we can use the . If we let <span class="math inline">\(u = x^2 - 2\)</span>:</p>
+<span class="math display">\[\begin{align*}
+y(u) &amp;= 4u^3\\
+\frac{dy}{dx} &amp;= \frac{dy}{du}\frac{du}{dx}\\
+&amp;= (12u^2)(2x)\\
+&amp;= 24x(x^2 - 2)^2
+\end{align*}\]</span>
+<p>In the case when we have a function of more than one variable, we take <em>partial</em> derivatives by treating all variables that are not of interest as constants. Given a function like <span class="math inline">\(f(x_1,x_2,x_3) = 2x^2_1 x_2x_3 + 4x_1 x_2^2 + 3x_2 + 4x^2_3\)</span>, we would denote the first derivative w.r.t. <span class="math inline">\(x_1\)</span> as <span class="math inline">\(f_{x_1}(x_1,x_2,x_3)\)</span>, the first derivative w.r.t <span class="math inline">\(x_2\)</span> as <span class="math inline">\(f_{x_2}(x_1,x_2,x_3)\)</span>, and the first derivative w.r.t <span class="math inline">\(x_3\)</span> as <span class="math inline">\(f_{x_3}(x_1,x_2,x_3)\)</span>. Two successive differentiations with respect to <span class="math inline">\(x_1\)</span> would be labeled <span class="math inline">\(f_{x_1x_1}(x_1,x_2,x_3)\)</span>. Alternatively, we are likely to use alternative notation such as <span class="math inline">\(\frac{\partial y}{\partial x_1}\)</span> or <span class="math inline">\(\frac{\partial^2 y}{\partial x_1^2}\)</span> to represent the first and second derivatives w.r.t. to <span class="math inline">\(x_1\)</span>, and <span class="math inline">\(\frac{\partial^2 y}{\partial x_1 \partial x_2}\)</span> to be the partial second derivative with respect to <span class="math inline">\(x_1\)</span> and then <span class="math inline">\(x_2\)</span>. For example:</p>
+<span class="math display">\[\begin{align*}
+f(x_1,x_2,x_3) &amp;= 2x^2_1 x_2x_3 + 4x_1 x_2^2 + 3x_2 + 4x^2_3\\
+f_{x_1} &amp;= 4x_1 x_2 x_3 + 4 x^2_2\\
+f_{x_2} &amp;= 2x^2_1x_3 + 8x_1 x_2 + 3\\
+f_{x_3} &amp;= 2x_1^2x_2 + 8x_3\\
+f_{x_1 x_2} &amp;= 4x_1 x_3 + 8x_2\\
+\end{align*}\]</span>
+<p>And so on.</p>
+<p>Given the following:</p>
+<p><span class="math display">\[
+a = \begin{bmatrix} a_1 \\ a_2 \\ ... \\ a_n \end{bmatrix}, \quad x = \begin{bmatrix} x_1 \\ x_2 \\ ... \\ x_n \end{bmatrix}
+\]</span></p>
+<p>Then:</p>
+<span class="math display">\[\begin{equation}
+\label{vec_calc}
+\frac{\partial}{\partial x}a&#39;x = 
+\begin{bmatrix} \frac{\partial}{\partial x_1} a_1x_1 &amp; \frac{\partial}{\partial x_2} a_2x_2 &amp; ... &amp; \frac{\partial}{\partial x_n} a_nx_n \end{bmatrix} 
+= a&#39; 
+\end{equation}\]</span>
+<p>Given additionally:</p>
+<p><span class="math display">\[
+A = \begin{bmatrix} a_{1,1} &amp; \sigma_{1,2} = a_{2,1} &amp; ... &amp; a_{1,n} = a_{n,1} \\
+                         a_{2,1} = a_{1,2} &amp; a_{2,2} &amp; ... &amp; a_{2,n} = a_{n,2} \\
+                         ... &amp; ... &amp; ... &amp; ... \\
+                         a_{n,1} = a_{1,n} &amp; a_{n,2} = a_{2,n} &amp; ... &amp; a_{n,n} \\
+                         \end{bmatrix}
+\]</span></p>
+<p>Then:</p>
+<span class="math display">\[\begin{equation}
+\label{vec_calc2}
+\frac{\partial}{\partial x} Ax = A 
+\end{equation}\]</span>
+<span class="math display">\[\begin{equation}
+\label{vec_calc3}
+\frac{\partial}{\partial x} x&#39; A x = 2Ax
+\end{equation}\]</span>
+<p>This final rule will prove very useful in aspects of simple portfolio optimization.</p>
+</div>
+<div id="maximization-minimization" class="section level3 unnumbered">
+<h3>Maximization &amp; Minimization</h3>
+<p>Given a function, such as <span class="math inline">\(f(x) = -2x^2 + 5\)</span>, we find the critical points of <span class="math inline">\(f\)</span> by differentiating w.r.t. the decision variable (in this case, <span class="math inline">\(x\)</span>) and setting the first derivative equal to zero and solving for the location:</p>
+<span class="math display">\[\begin{align*}
+f(x) &amp;= -2(x-2)^2 + 5\\
+f&#39;(x) &amp;= -4(x-2)\\
+0 &amp;= -4(x-2)\\
+x &amp;= 2
+\end{align*}\]</span>
+<p>And so the critical point of the original function <span class="math inline">\(f\)</span> occurs when <span class="math inline">\(x=2\)</span>, which would be at the point <span class="math inline">\((2,5)\)</span>.</p>
+<p>We decide whether the critical point <span class="math inline">\((2,5)\)</span> is a minimum or maximum by investigating the sign of the second derivative - a negative second derivative indicates that this is a maximum, while a positive second derivative indicates that this is a minimum. In the case of the function <span class="math inline">\(f\)</span>, the critical point is a maximum, since <span class="math inline">\(f&#39;&#39;(x) = -4\)</span>.</p>
+<p>There are similar rules for multivariable functions as well.</p>
+</div>
+<div id="constrained-maximization-minimization" class="section level3 unnumbered">
+<h3>Constrained Maximization &amp; Minimization</h3>
+<p>In most applications of maximization and minimization, we would like to be able to constrain the decision variable in some way. Consider the following:</p>
+<p><span class="math display">\[
+max_\omega \quad \omega&#39; \Sigma \omega
+\]</span> Which is the objective function for a global minimum variance portfolio. The unconstrained solution for this problem is found when:</p>
+<span class="math display">\[\begin{align*}
+\frac{\partial}{\partial \omega} \omega&#39; \Sigma \omega &amp;= 2 \Sigma \omega \\
+F.O.C. \quad 0 &amp;= 2 \Sigma \omega \\
+0 &amp;= \omega
+\end{align*}\]</span>
+<p>Or, in english, the portfolio variance is minimized when all weights are 0. This is uninteresting, and usually we with to find the minimum variance portfolio weights in the case of <em>full investment</em> wherein the portfolio weights sum to 1, which we can represent in matrix language with <span class="math inline">\(\omega&#39; \mathbf{1} = 1\)</span>. We can add this constraint via the lagrangian <span class="math inline">\(1 - \omega&#39; \mathbf{1} = 0\)</span>. We now have the objective function:</p>
+<p><span class="math display">\[
+max_\omega \quad \omega&#39; \Sigma \omega \quad \text{s.t.} \ \omega&#39; \mathbf{1} = 1
+\]</span></p>
+<p>With f.o.c.:</p>
+<p><span class="math display">\[
+\frac{\partial}{\partial \omega} \ [\frac{1}{2} \omega&#39; \Sigma \omega + (1 - \omega&#39; \mathbf{1})] = 0
+\]</span></p>
+<p>Solution to this will yield the (more interesting) minimum variance portfolio with full investment:</p>
+<p><span class="math display">\[
+\omega^* = \frac{\Sigma^{-1} \mathbf{1}}{\mathbf{1}&#39; \Sigma^{-1} \mathbf{1}}
+\]</span></p>
+
+</div>
+</div>
+</div>
+<h3>References</h3>
+<div id="refs" class="references">
+<div id="ref-gs2006">
+<p>Grinstead, C. M., and J. L. Snell. 2006. <em>Grinstead and Snell’s Introduction to Probability</em>. 2nd ed. American Mathematical Society. <a href="https://math.dartmouth.edu/~prob/prob/prob.pdf" class="uri">https://math.dartmouth.edu/~prob/prob/prob.pdf</a>.</p>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="appendix1.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="references.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"google": false,
+"weibo": false,
+"instapper": false,
+"vk": false,
+"all": ["facebook", "google", "twitter", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/rstudio/bookdown-demo/edit/master/09-appendix2.Rmd",
+"text": "Edit"
+},
+"download": ["mqim_book.pdf", "mqim_book.epub"],
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "";
+    if (src === "" || src === "true") src = "https://cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:" && /^https?:/.test(src))
+      src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

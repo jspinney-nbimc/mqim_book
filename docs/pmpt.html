@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html >
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Quantitative Portfolio Management</title>
+  <meta name="description" content="Class notes for MBA 6693/ADM 4693 - Quantitative Portfolio Management at University of New Brunswick">
+  <meta name="generator" content="bookdown 0.6 and GitBook 2.6.7">
+
+  <meta property="og:title" content="Quantitative Portfolio Management" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="Class notes for MBA 6693/ADM 4693 - Quantitative Portfolio Management at University of New Brunswick" />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Quantitative Portfolio Management" />
+  
+  <meta name="twitter:description" content="Class notes for MBA 6693/ADM 4693 - Quantitative Portfolio Management at University of New Brunswick" />
+  
+
+<meta name="author" content="Jon Spinney">
+
+
+<meta name="date" content="2018-03-10">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  
+  
+<link rel="prev" href="risk.html">
+<link rel="next" href="appendix1.html">
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code > span.dt { color: #902000; } /* DataType */
+code > span.dv { color: #40a070; } /* DecVal */
+code > span.bn { color: #40a070; } /* BaseN */
+code > span.fl { color: #40a070; } /* Float */
+code > span.ch { color: #4070a0; } /* Char */
+code > span.st { color: #4070a0; } /* String */
+code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code > span.ot { color: #007020; } /* Other */
+code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code > span.fu { color: #06287e; } /* Function */
+code > span.er { color: #ff0000; font-weight: bold; } /* Error */
+code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #880000; } /* Constant */
+code > span.sc { color: #4070a0; } /* SpecialChar */
+code > span.vs { color: #4070a0; } /* VerbatimString */
+code > span.ss { color: #bb6688; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #19177c; } /* Variable */
+code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #666666; } /* Operator */
+code > span.bu { } /* BuiltIn */
+code > span.ex { } /* Extension */
+code > span.pp { color: #bc7a00; } /* Preprocessor */
+code > span.at { color: #7d9029; } /* Attribute */
+code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Quantitative Portfolio Management</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Preliminary Material</a></li>
+<li class="chapter" data-level="2" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i><b>2</b> Introduction</a><ul>
+<li class="chapter" data-level="2.1" data-path="intro.html"><a href="intro.html#commercially-available-textbooks-related-to-quantitative-equity-portfolio-management"><i class="fa fa-check"></i><b>2.1</b> Commercially Available Textbooks Related to Quantitative Equity Portfolio Management</a></li>
+<li class="chapter" data-level="2.2" data-path="intro.html"><a href="intro.html#course-description-and-background-information"><i class="fa fa-check"></i><b>2.2</b> Course Description and Background Information</a></li>
+<li class="chapter" data-level="2.3" data-path="intro.html"><a href="intro.html#introduction-to-r-exploratory-data-analysis"><i class="fa fa-check"></i><b>2.3</b> Introduction to R &amp; Exploratory Data Analysis</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="mpt.html"><a href="mpt.html"><i class="fa fa-check"></i><b>3</b> Modern Portfolio Theory</a><ul>
+<li class="chapter" data-level="3.1" data-path="mpt.html"><a href="mpt.html#markowitz"><i class="fa fa-check"></i><b>3.1</b> Markowitz</a></li>
+<li class="chapter" data-level="3.2" data-path="mpt.html"><a href="mpt.html#capm"><i class="fa fa-check"></i><b>3.2</b> CAPM</a></li>
+<li class="chapter" data-level="3.3" data-path="mpt.html"><a href="mpt.html#apt-multifactor-models"><i class="fa fa-check"></i><b>3.3</b> APT &amp; Multifactor Models</a></li>
+<li class="chapter" data-level="3.4" data-path="mpt.html"><a href="mpt.html#modern-approaches"><i class="fa fa-check"></i><b>3.4</b> Modern Approaches</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="anomalies.html"><a href="anomalies.html"><i class="fa fa-check"></i><b>4</b> Anomalies &amp; Alpha Strategies</a><ul>
+<li class="chapter" data-level="4.1" data-path="anomalies.html"><a href="anomalies.html#early-anomalies-literature"><i class="fa fa-check"></i><b>4.1</b> Early Anomalies Literature</a></li>
+<li class="chapter" data-level="4.2" data-path="anomalies.html"><a href="anomalies.html#fama-french-1990s"><i class="fa fa-check"></i><b>4.2</b> Fama French (1990s)</a></li>
+<li class="chapter" data-level="4.3" data-path="anomalies.html"><a href="anomalies.html#carhart"><i class="fa fa-check"></i><b>4.3</b> Carhart</a></li>
+<li class="chapter" data-level="4.4" data-path="anomalies.html"><a href="anomalies.html#other-factors"><i class="fa fa-check"></i><b>4.4</b> Other Factors</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="forecasting.html"><a href="forecasting.html"><i class="fa fa-check"></i><b>5</b> Forecasting</a><ul>
+<li class="chapter" data-level="5.1" data-path="forecasting.html"><a href="forecasting.html#fractile-zero-investment-portfolios"><i class="fa fa-check"></i><b>5.1</b> Fractile Zero-Investment Portfolios</a></li>
+<li class="chapter" data-level="5.2" data-path="forecasting.html"><a href="forecasting.html#factor-mimicking-portfolios"><i class="fa fa-check"></i><b>5.2</b> Factor Mimicking Portfolios</a></li>
+<li class="chapter" data-level="5.3" data-path="forecasting.html"><a href="forecasting.html#fama-macbeth-regressions"><i class="fa fa-check"></i><b>5.3</b> Fama-Macbeth Regressions</a></li>
+<li class="chapter" data-level="5.4" data-path="forecasting.html"><a href="forecasting.html#optimal-predictors"><i class="fa fa-check"></i><b>5.4</b> Optimal Predictors</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="portopt.html"><a href="portopt.html"><i class="fa fa-check"></i><b>6</b> Portfolio Optimization</a><ul>
+<li class="chapter" data-level="6.1" data-path="portopt.html"><a href="portopt.html#minimum-variance-portfolios"><i class="fa fa-check"></i><b>6.1</b> Minimum Variance Portfolios</a><ul>
+<li class="chapter" data-level="6.1.1" data-path="portopt.html"><a href="portopt.html#case-study-minimum-variance-portfolios"><i class="fa fa-check"></i><b>6.1.1</b> Case Study: Minimum Variance Portfolios</a></li>
+</ul></li>
+<li class="chapter" data-level="6.2" data-path="portopt.html"><a href="portopt.html#constrained-optimization"><i class="fa fa-check"></i><b>6.2</b> Constrained Optimization</a></li>
+<li class="chapter" data-level="6.3" data-path="portopt.html"><a href="portopt.html#active-portfolio-optimization"><i class="fa fa-check"></i><b>6.3</b> Active Portfolio Optimization</a></li>
+<li class="chapter" data-level="6.4" data-path="portopt.html"><a href="portopt.html#modern-optimization"><i class="fa fa-check"></i><b>6.4</b> Modern Optimization</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="risk.html"><a href="risk.html"><i class="fa fa-check"></i><b>7</b> Risk Models</a><ul>
+<li class="chapter" data-level="7.1" data-path="risk.html"><a href="risk.html#risk-measures"><i class="fa fa-check"></i><b>7.1</b> Risk Measures</a></li>
+<li class="chapter" data-level="7.2" data-path="risk.html"><a href="risk.html#covariance-matrices-and-bayesian-shrinkage-models"><i class="fa fa-check"></i><b>7.2</b> Covariance Matrices and Bayesian Shrinkage Models</a></li>
+<li class="chapter" data-level="7.3" data-path="risk.html"><a href="risk.html#principal-components-analysis"><i class="fa fa-check"></i><b>7.3</b> Principal Components Analysis</a></li>
+<li class="chapter" data-level="7.4" data-path="risk.html"><a href="risk.html#fundamental-factor-models"><i class="fa fa-check"></i><b>7.4</b> Fundamental Factor Models</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="pmpt.html"><a href="pmpt.html"><i class="fa fa-check"></i><b>8</b> Post-Modern Portfolio Theory</a><ul>
+<li class="chapter" data-level="8.1" data-path="pmpt.html"><a href="pmpt.html#risk-parity"><i class="fa fa-check"></i><b>8.1</b> Risk Parity</a><ul>
+<li class="chapter" data-level="8.1.1" data-path="pmpt.html"><a href="pmpt.html#inverse-volatility-weighting-naive-risk-parity"><i class="fa fa-check"></i><b>8.1.1</b> Inverse Volatility Weighting (Naive Risk Parity)</a></li>
+<li class="chapter" data-level="8.1.2" data-path="pmpt.html"><a href="pmpt.html#equal-risk-contributions"><i class="fa fa-check"></i><b>8.1.2</b> Equal Risk Contributions</a></li>
+</ul></li>
+<li class="chapter" data-level="8.2" data-path="pmpt.html"><a href="pmpt.html#concentrationdiversification"><i class="fa fa-check"></i><b>8.2</b> Concentration/Diversification</a><ul>
+<li class="chapter" data-level="8.2.1" data-path="pmpt.html"><a href="pmpt.html#most-diversified-portfolio"><i class="fa fa-check"></i><b>8.2.1</b> Most Diversified Portfolio</a></li>
+<li class="chapter" data-level="8.2.2" data-path="pmpt.html"><a href="pmpt.html#hhi-based-deconcentration"><i class="fa fa-check"></i><b>8.2.2</b> HHI Based Deconcentration</a></li>
+</ul></li>
+<li class="chapter" data-level="8.3" data-path="pmpt.html"><a href="pmpt.html#mean-cvar"><i class="fa fa-check"></i><b>8.3</b> Mean-CVaR</a></li>
+<li class="chapter" data-level="8.4" data-path="pmpt.html"><a href="pmpt.html#synthesis-of-pmpt-approaches"><i class="fa fa-check"></i><b>8.4</b> Synthesis of PMPT Approaches</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="appendix1.html"><a href="appendix1.html"><i class="fa fa-check"></i>Appendix 1 - Special Topics</a><ul>
+<li class="chapter" data-level="" data-path="appendix1.html"><a href="appendix1.html#hedge-fund-replication"><i class="fa fa-check"></i>Hedge Fund Replication</a></li>
+<li class="chapter" data-level="" data-path="appendix1.html"><a href="appendix1.html#robustness"><i class="fa fa-check"></i>Robustness</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="appendix2.html"><a href="appendix2.html"><i class="fa fa-check"></i>Appendix 2 - Background Information</a><ul>
+<li class="chapter" data-level="" data-path="appendix2.html"><a href="appendix2.html#matrix-algebra-review"><i class="fa fa-check"></i>Matrix Algebra Review</a><ul>
+<li class="chapter" data-level="" data-path="appendix2.html"><a href="appendix2.html#basic-concepts"><i class="fa fa-check"></i>Basic Concepts</a></li>
+<li class="chapter" data-level="" data-path="appendix2.html"><a href="appendix2.html#inverse-matrices"><i class="fa fa-check"></i>Inverse Matrices</a></li>
+<li class="chapter" data-level="" data-path="appendix2.html"><a href="appendix2.html#sums"><i class="fa fa-check"></i>Sums</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="appendix2.html"><a href="appendix2.html#probability-review"><i class="fa fa-check"></i>Probability Review</a><ul>
+<li class="chapter" data-level="" data-path="appendix2.html"><a href="appendix2.html#probability-distributions-random-variables"><i class="fa fa-check"></i>Probability Distributions &amp; Random Variables</a></li>
+<li class="chapter" data-level="" data-path="appendix2.html"><a href="appendix2.html#rules-of-expectation-variance"><i class="fa fa-check"></i>Rules of Expectation &amp; Variance</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="appendix2.html"><a href="appendix2.html#calculus-review"><i class="fa fa-check"></i>Calculus Review</a><ul>
+<li class="chapter" data-level="" data-path="appendix2.html"><a href="appendix2.html#differentiation-of-vector-matrix-valued-functions"><i class="fa fa-check"></i>Differentiation of Vector &amp; Matrix Valued Functions</a></li>
+<li class="chapter" data-level="" data-path="appendix2.html"><a href="appendix2.html#maximization-minimization"><i class="fa fa-check"></i>Maximization &amp; Minimization</a></li>
+<li class="chapter" data-level="" data-path="appendix2.html"><a href="appendix2.html#constrained-maximization-minimization"><i class="fa fa-check"></i>Constrained Maximization &amp; Minimization</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Quantitative Portfolio Management</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="pmpt" class="section level1">
+<h1><span class="header-section-number">Chapter 8</span> Post-Modern Portfolio Theory</h1>
+<p>The original Markowitz spproach to portfolio construction, which we implemented via the Quadratic Utility approach of:</p>
+<p><span class="math display">\[
+max_\omega \quad \omega&#39; \mu - 2^{-1}\lambda^{-1} \omega&#39; \Sigma \omega \quad \text{s.t.} \ \omega&#39; \mathbf{1} = 1
+\]</span></p>
+<p>is typically referred to as <strong>Modern Portfolio Theory (“MPT”)</strong>. MPT requires the estimation of asset means and co-variances, and trades off return vs. risk in an optimization framework. While the approach is intuitive in its approach, practitioners have found numerous challenges in the implementation of the MPT framework, including:</p>
+<ul>
+<li>unintuitive holdings,</li>
+<li>highly concentrated portfolios, and</li>
+<li>excess turnover.</li>
+</ul>
+<p>Each of these issues leads to a common phenomenon of MTP optimal portfolios producing inferior results out of sample relative to more naive approaches. A significant contributor to the challenge of implementing MPT approaches is the combination of the extreme sensitivity of the MPT approach to errors in the mean vector, combined with the real-world challenge of estimating such a noisy parameter. This extreme sensitivity arises as a result of the <em>full investment constraint</em> in the optimization process. These challenges have resulted in numerous adaptations of the MPT approach in practice, including:</p>
+<ul>
+<li>Risk Parity Investing,</li>
+<li>Diversification/Concentration Management, and</li>
+<li>Alternative Risk Definitions (e.g. Mean-CVaR) that focus on downside risk as opposed to the symmatric nature of variance/volatility.</li>
+</ul>
+<p>Collectively, these and other more recent approaches to portfolio construction can be referred to as <strong>Post-Modern Portfolio Theory (“PMPT”)</strong>.</p>
+<div id="risk-parity" class="section level2">
+<h2><span class="header-section-number">8.1</span> Risk Parity</h2>
+<p>Risk parity terminology and meaning often depends on the user, but for the purposes of this book, we define two classes of risk parity approaches to investing - <strong>inverse volatility (“IV”)</strong>, which is sometimes also referred to as <em>naive risk parity</em>, and <strong>equal risk contribution (“ERC”)</strong>. IV as a weighting scheme that weights securities or asset classes proportional to the inverse of their volatility, whereas ERC is a more complicated approach to portfolio construction that results each security’s contribution to total portfolio risk being equal. IV strategies therefore consider only the volatilities of the assets in the universe, while ERC strategies consider also the covariance structure between all the assets in the portfolio.</p>
+<p>As a visualization, consider a standard 60-40 portfolio of stocks and bonds. Using recent data, the volatility of the equity portion was about 10%, while the volatility of the bond portfolio was closer to 3.5% - the portfolio itself had to total combined volatility of about 6% (the correlation between bonds and stocks during this period was 0). How much of the portfolio total volatility could be attributed to the two components?</p>
+<table>
+<thead>
+<tr class="header">
+<th>Asset Class</th>
+<th align="center">Weight (%)</th>
+<th align="center">Volatility (%)</th>
+<th align="center">% Contrib. to Port Risk</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Equities</td>
+<td align="center">60%</td>
+<td align="center">10.2%</td>
+<td align="center">99.4%</td>
+</tr>
+<tr class="even">
+<td>Bonds</td>
+<td align="center">40%</td>
+<td align="center">3.5%</td>
+<td align="center">0.6%</td>
+</tr>
+<tr class="odd">
+<td>Total Portfolio</td>
+<td align="center">100%</td>
+<td align="center">6.3%</td>
+<td align="center">100%</td>
+</tr>
+</tbody>
+</table>
+<p>Consider instead if we had used a portfolio approach that sought to equalize the <strong>% Contrib. to Port Risk</strong> at 50% for each asset class:</p>
+<table>
+<thead>
+<tr class="header">
+<th>Asset Class</th>
+<th align="center">Weight (%)</th>
+<th align="center">Volatility (%)</th>
+<th align="center">% Contrib. to Port Risk</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Equities</td>
+<td align="center">25.5%</td>
+<td align="center">10.2%</td>
+<td align="center">50%</td>
+</tr>
+<tr class="even">
+<td>Bonds</td>
+<td align="center">74.5%</td>
+<td align="center">3.5%</td>
+<td align="center">50%</td>
+</tr>
+<tr class="odd">
+<td>Total Portfolio</td>
+<td align="center">100%</td>
+<td align="center">3.7%</td>
+<td align="center">100%</td>
+</tr>
+</tbody>
+</table>
+<p>The <strong>Equal Risk Contribution</strong> portfolio has just 25% of its assets in the higher risk equity portfolio and 75% of its assets in the relatively lower volatility bond portfolio. The portfolio, with a total risk of 3.7%, derives 50% of its volatility from bonds and 50% from equities.</p>
+<p>There are two main quantitative approaches to risk parity - naive risk parity that ignores correlations and weights stocks proportionally to the inverse of their volatility forecasts and equal risk contribution portfolios that take into account the full covariance structure of the market in setting the % Contrib. to Port Risk to be equal for all assets.</p>
+<div id="inverse-volatility-weighting-naive-risk-parity" class="section level3">
+<h3><span class="header-section-number">8.1.1</span> Inverse Volatility Weighting (Naive Risk Parity)</h3>
+<p>For IV, we first estimate the volatility of the assets in the universe and then assign weights to each asset in the resulting portfolio such that:</p>
+<p><span class="math display">\[
+\omega_i = \frac{\sigma^{-1}_i}{\sum_{i=1}^k \sigma^{-1}_i}
+\]</span></p>
+<p>In the IV portfolio construction process, assets with lower volatilities are assigned higher weights, and assets with higher volatilities are assigned lower weights.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(quantmod)
+tickers &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;F&quot;</span>,<span class="st">&quot;MMM&quot;</span>,<span class="st">&quot;MSFT&quot;</span>)
+<span class="kw">getSymbols</span>(tickers)</code></pre></div>
+<pre><code>## [1] &quot;F&quot;    &quot;MMM&quot;  &quot;MSFT&quot;</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">dat &lt;-<span class="st"> </span><span class="kw">merge.xts</span>(F<span class="op">$</span>F.Adjusted, MMM<span class="op">$</span>MMM.Adjusted, MSFT<span class="op">$</span>MSFT.Adjusted)
+ret &lt;-<span class="st"> </span>(<span class="kw">exp</span>(<span class="kw">diff</span>(<span class="kw">log</span>(dat)))<span class="op">-</span><span class="dv">1</span>)[<span class="op">-</span><span class="dv">1</span>,]
+vols &lt;-<span class="st"> </span><span class="kw">apply</span>(ret,<span class="dv">2</span>,sd)
+wgts_rp &lt;-<span class="st"> </span>(<span class="dv">1</span><span class="op">/</span>vols)<span class="op">/</span><span class="kw">sum</span>(<span class="dv">1</span><span class="op">/</span>vols)
+<span class="kw">names</span>(wgts_rp) &lt;-<span class="st"> </span>tickers
+<span class="kw">barplot</span>(wgts_rp,
+        <span class="dt">main=</span><span class="st">&quot;Weights of Naive Risk Parity Portfolio for F, MMM and MSFT&quot;</span>,
+        <span class="dt">xlab=</span><span class="st">&quot;Stock&quot;</span>,
+        <span class="dt">ylab=</span><span class="st">&quot;Weight in Portfolio&quot;</span>)</code></pre></div>
+<p><img src="mqim_book_files/figure-html/unnamed-chunk-4-1.png" width="672" /></p>
+</div>
+<div id="equal-risk-contributions" class="section level3">
+<h3><span class="header-section-number">8.1.2</span> Equal Risk Contributions</h3>
+<p>A more complicated approach to risk parity is the one that chooses asset weights such that the contribution of each asset to the total portfolio’s risk is equal. Like IV approaches, ERC applies relatively higher weights to lower risk assets and vice versa, but unlike IV approaches, the ERC methodology considers the full covariance structure of the market, not just the asset variances.</p>
+<p>The ERC approac of <span class="citation">(Maillard, Roncalli, and Teiletche <a href="#ref-maillard2010">2010</a>)</span> requires a solution to the following:</p>
+<p><span class="math display">\[
+TRC_i = TRC_j \quad \forall_{i,j}
+\]</span></p>
+<p>Where</p>
+<p><span class="math display">\[
+TRC_i = \omega_i \frac{\partial \sigma_p}{\partial \omega_i}
+\]</span></p>
+<p>This ERC problem can be solved via a newton approach (Algorithm 1 in <span class="citation">(Chaves et al. <a href="#ref-chaves2012">2012</a>)</span>). The R function <strong>SolveRiskParity()</strong> computes ERC portfolio weights for a given covariance matrix (function code not shown).</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(tseries)
+<span class="kw">library</span>(quantmod)
+tickers &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;F&quot;</span>,<span class="st">&quot;MMM&quot;</span>,<span class="st">&quot;MSFT&quot;</span>)
+<span class="kw">getSymbols</span>(tickers)</code></pre></div>
+<pre><code>## [1] &quot;F&quot;    &quot;MMM&quot;  &quot;MSFT&quot;</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">dat &lt;-<span class="st"> </span><span class="kw">merge.xts</span>(F<span class="op">$</span>F.Adjusted, MMM<span class="op">$</span>MMM.Adjusted, MSFT<span class="op">$</span>MSFT.Adjusted)
+ret &lt;-<span class="st"> </span>(<span class="kw">exp</span>(<span class="kw">diff</span>(<span class="kw">log</span>(dat)))<span class="op">-</span><span class="dv">1</span>)[<span class="op">-</span><span class="dv">1</span>,]
+sigma &lt;-<span class="st"> </span><span class="kw">cov</span>(ret)
+erc_soln &lt;-<span class="st"> </span><span class="kw">SolveRiskParity</span>(sigma)
+wgts &lt;-<span class="st"> </span>erc_soln<span class="op">$</span>port_wgt[,<span class="dv">1</span>]
+<span class="kw">names</span>(wgts) &lt;-<span class="st"> </span>tickers
+<span class="kw">barplot</span>(wgts,
+        <span class="dt">main=</span><span class="st">&quot;Weights of ERC Portfolio for F, MMM and MSFT&quot;</span>,
+        <span class="dt">xlab=</span><span class="st">&quot;Stock&quot;</span>,
+        <span class="dt">ylab=</span><span class="st">&quot;Weight in Portfolio&quot;</span>)</code></pre></div>
+<p><img src="mqim_book_files/figure-html/unnamed-chunk-6-1.png" width="672" /></p>
+<p>We can confirm that the risk contribution is equal for each asset by verifying that <span class="math inline">\(\omega_i \times \frac{\partial \sigma_p}{\partial \omega_i} = \omega_j \times \frac{\partial \sigma_p}{\partial \omega_j} \quad \forall \ i, j\)</span>:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">contribs &lt;-<span class="st"> </span>erc_soln<span class="op">$</span>pctr[,<span class="dv">1</span>]
+<span class="kw">names</span>(contribs) &lt;-<span class="st"> </span>tickers
+<span class="kw">barplot</span>(contribs,
+        <span class="dt">main=</span><span class="st">&quot;Pct. Contrib to Port. Risk of ERC Portfolio for F, MMM and MSFT&quot;</span>,
+        <span class="dt">xlab=</span><span class="st">&quot;Stock&quot;</span>,
+        <span class="dt">ylab=</span><span class="st">&quot;PCTR&quot;</span>)</code></pre></div>
+<p><img src="mqim_book_files/figure-html/unnamed-chunk-7-1.png" width="672" /></p>
+<p>In general, ERC portfolios have reduced risk relative to a market capitalization weighted or equally weighted benchmark due to the relative overweighting of assets with lower volatility and relative underweighting of assets with relatively higher volatility - there is on average a negative relationship between an asset’s volatility and its weight in the ERC portfolio:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(calibrate)
+vols &lt;-<span class="st"> </span><span class="kw">apply</span>(ret,<span class="dv">2</span>,sd)<span class="op">*</span><span class="kw">sqrt</span>(<span class="dv">252</span>)
+<span class="kw">plot</span>(vols,wgts,
+     <span class="dt">main=</span><span class="st">&quot;Stock Volatility vs. Weight in ERC Portfolio&quot;</span>,
+     <span class="dt">xlab=</span><span class="st">&quot;Volatility&quot;</span>,
+     <span class="dt">ylab=</span><span class="st">&quot;Weight in Portfolio&quot;</span>,
+     <span class="dt">pch=</span><span class="dv">19</span>,
+     <span class="dt">col=</span><span class="st">&quot;blue&quot;</span>
+     )
+<span class="kw">textxy</span>(vols,wgts, <span class="dt">labs=</span>tickers, <span class="dt">cx =</span> <span class="dv">1</span>, <span class="dt">dcol =</span> <span class="st">&quot;black&quot;</span>, <span class="dt">m =</span> <span class="kw">c</span>(<span class="op">-</span><span class="dv">1</span>, <span class="op">-</span><span class="dv">1</span>))</code></pre></div>
+<p><img src="mqim_book_files/figure-html/unnamed-chunk-8-1.png" width="672" /></p>
+</div>
+</div>
+<div id="concentrationdiversification" class="section level2">
+<h2><span class="header-section-number">8.2</span> Concentration/Diversification</h2>
+<p>Mean-Variance optimal portfolios are often highly concentrated, with potentially very large positions in the most attractive assets:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(quantmod)
+<span class="kw">library</span>(quadprog)
+tickers &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;MMM&quot;</span>,<span class="st">&quot;AXP&quot;</span>,<span class="st">&quot;AAPL&quot;</span>,<span class="st">&quot;BA&quot;</span>,<span class="st">&quot;CAT&quot;</span>,<span class="st">&quot;CVX&quot;</span>,<span class="st">&quot;CSCO&quot;</span>,
+             <span class="st">&quot;KO&quot;</span>,<span class="st">&quot;DIS&quot;</span>,<span class="st">&quot;DWDP&quot;</span>,<span class="st">&quot;XOM&quot;</span>,<span class="st">&quot;GE&quot;</span>,<span class="st">&quot;GS&quot;</span>,<span class="st">&quot;HD&quot;</span>,<span class="st">&quot;IBM&quot;</span>,
+             <span class="st">&quot;INTC&quot;</span>,<span class="st">&quot;JNJ&quot;</span>,<span class="st">&quot;JPM&quot;</span>,<span class="st">&quot;MCD&quot;</span>,<span class="st">&quot;MRK&quot;</span>,<span class="st">&quot;MSFT&quot;</span>,<span class="st">&quot;NKE&quot;</span>,
+             <span class="st">&quot;PFE&quot;</span>,<span class="st">&quot;PG&quot;</span>,<span class="st">&quot;TRV&quot;</span>,<span class="st">&quot;UTX&quot;</span>,<span class="st">&quot;UNH&quot;</span>,<span class="st">&quot;VZ&quot;</span>,<span class="st">&quot;V&quot;</span>,<span class="st">&quot;WMT&quot;</span>)
+<span class="kw">getSymbols</span>(tickers)</code></pre></div>
+<pre><code>##  [1] &quot;MMM&quot;  &quot;AXP&quot;  &quot;AAPL&quot; &quot;BA&quot;   &quot;CAT&quot;  &quot;CVX&quot;  &quot;CSCO&quot; &quot;KO&quot;   &quot;DIS&quot;  &quot;DWDP&quot;
+## [11] &quot;XOM&quot;  &quot;GE&quot;   &quot;GS&quot;   &quot;HD&quot;   &quot;IBM&quot;  &quot;INTC&quot; &quot;JNJ&quot;  &quot;JPM&quot;  &quot;MCD&quot;  &quot;MRK&quot; 
+## [21] &quot;MSFT&quot; &quot;NKE&quot;  &quot;PFE&quot;  &quot;PG&quot;   &quot;TRV&quot;  &quot;UTX&quot;  &quot;UNH&quot;  &quot;VZ&quot;   &quot;V&quot;    &quot;WMT&quot;</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">dat &lt;-<span class="st"> </span>MMM<span class="op">$</span>MMM.Adjusted
+<span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">2</span><span class="op">:</span><span class="kw">length</span>(tickers)) {
+  obj &lt;-<span class="st"> </span><span class="kw">paste</span>(tickers[i],<span class="st">&quot;$&quot;</span>,tickers[i],<span class="st">&quot;.Adjusted&quot;</span>,<span class="dt">sep=</span><span class="st">&quot;&quot;</span>)
+  dat &lt;-<span class="st"> </span><span class="kw">merge</span>(dat,<span class="kw">eval</span>(<span class="kw">parse</span>(<span class="dt">text=</span>obj)))
+  }
+<span class="kw">colnames</span>(dat) &lt;-<span class="st"> </span>tickers
+dat &lt;-<span class="st"> </span>dat[<span class="st">&#39;2008-03-19/&#39;</span>]
+
+ret &lt;-<span class="st"> </span>(<span class="kw">exp</span>(<span class="kw">diff</span>(<span class="kw">log</span>(dat)))<span class="op">-</span><span class="dv">1</span>)[<span class="op">-</span><span class="dv">1</span>,]
+
+sigma &lt;-<span class="st"> </span><span class="kw">cov</span>(ret)
+
+exp_ret &lt;-<span class="st"> </span><span class="kw">array</span>(<span class="dv">0</span>,<span class="dt">dim=</span><span class="kw">c</span>(<span class="dv">30</span>,<span class="dv">1</span>)) 
+const &lt;-<span class="st"> </span><span class="kw">array</span>(<span class="dv">1</span>,<span class="dt">dim=</span><span class="kw">c</span>(<span class="dv">30</span>,<span class="dv">1</span>)) 
+Amat &lt;-<span class="st"> </span><span class="kw">cbind</span>(const, <span class="kw">diag</span>(<span class="kw">nrow</span>(sigma)))
+bvec &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">1</span>, <span class="kw">rep</span>(<span class="dv">0</span>, <span class="kw">nrow</span>(sigma))) 
+port_wgts &lt;-<span class="st"> </span><span class="kw">solve.QP</span>(sigma,exp_ret,Amat,<span class="dt">bvec=</span>bvec,<span class="dt">meq=</span><span class="dv">1</span>)<span class="op">$</span>solution
+<span class="kw">names</span>(port_wgts) &lt;-<span class="st"> </span>tickers
+
+<span class="kw">barplot</span>(port_wgts,
+        <span class="dt">main=</span><span class="st">&quot;Unconstrained Minimum Variance Portfolio Weights&quot;</span>,
+        <span class="dt">ylab=</span><span class="st">&quot;Weight in MVP&quot;</span>,
+        <span class="dt">las=</span><span class="dv">2</span>)</code></pre></div>
+<p><img src="mqim_book_files/figure-html/unnamed-chunk-9-1.png" width="672" /></p>
+<p>Using a representative sample of 30 large cap U.S. stocks, an unconstrained MVP results in the portfolio holding as much as 20-30% in certain stocks.</p>
+<p>Two methods to prioritize diversification/deconcentration in the optimization process include the <strong>Most Diversified Portfolio (“MDP”)</strong> approach of <span class="citation">(Choueifaty and Coignard <a href="#ref-choueifaty2008">2008</a>)</span> as well as the direct modification of the objective function using the <strong>Herfindahl-Hirschman Index (“HHI”)</strong>.</p>
+<div id="most-diversified-portfolio" class="section level3">
+<h3><span class="header-section-number">8.2.1</span> Most Diversified Portfolio</h3>
+<p>The MDP is the portfolio that maximizes the diversification ratio of the portfolio, defined as the ratio of the weighted average volatility of the portfolio constituents to the volatility of the portfolio:</p>
+<p><span class="math display">\[
+DR = \frac{\omega&#39; v}{\sqrt{\omega&#39; \Sigma \omega}}
+\]</span></p>
+<p>Where <span class="math inline">\(v\)</span> is a vector of individual asset volatilities. Maximization of the diversification ratio is equivalent to the following optimization objective function:</p>
+<p><span class="math display">\[
+min_\omega \quad \omega&#39; C \omega \quad \text{s.t.} \ \omega&#39; \mathbf{1} = 1
+\]</span></p>
+<p>with <span class="math inline">\(C\)</span> the correlation matrix of assets in the investment universe.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(quantmod)
+tickers &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;F&quot;</span>,<span class="st">&quot;MMM&quot;</span>,<span class="st">&quot;MSFT&quot;</span>)
+<span class="kw">getSymbols</span>(tickers)</code></pre></div>
+<pre><code>## [1] &quot;F&quot;    &quot;MMM&quot;  &quot;MSFT&quot;</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">dat &lt;-<span class="st"> </span><span class="kw">merge.xts</span>(F<span class="op">$</span>F.Adjusted, MMM<span class="op">$</span>MMM.Adjusted, MSFT<span class="op">$</span>MSFT.Adjusted)
+ret &lt;-<span class="st"> </span>(<span class="kw">exp</span>(<span class="kw">diff</span>(<span class="kw">log</span>(dat)))<span class="op">-</span><span class="dv">1</span>)[<span class="op">-</span><span class="dv">1</span>,]
+C &lt;-<span class="st"> </span><span class="kw">cor</span>(ret)
+mdp &lt;-<span class="st"> </span><span class="kw">as.numeric</span>((<span class="kw">solve</span>(C)<span class="op">%*%</span><span class="kw">rep</span>(<span class="dv">1</span>,<span class="dv">3</span>))<span class="op">/</span><span class="kw">as.numeric</span>(<span class="kw">rep</span>(<span class="dv">1</span>,<span class="dv">3</span>)<span class="op">%*%</span><span class="kw">solve</span>(C)<span class="op">%*%</span><span class="kw">rep</span>(<span class="dv">1</span>,<span class="dv">3</span>)))
+<span class="kw">names</span>(mdp) &lt;-<span class="st"> </span>tickers
+<span class="kw">barplot</span>(mdp,
+        <span class="dt">main=</span><span class="st">&quot;Weights of Most Diversified Portfolio&quot;</span>,
+        <span class="dt">xlab=</span><span class="st">&quot;Stock&quot;</span>,
+        <span class="dt">ylab=</span><span class="st">&quot;Weight&quot;</span>)</code></pre></div>
+<p><img src="mqim_book_files/figure-html/unnamed-chunk-10-1.png" width="672" /></p>
+</div>
+<div id="hhi-based-deconcentration" class="section level3">
+<h3><span class="header-section-number">8.2.2</span> HHI Based Deconcentration</h3>
+<p>The Herfindahl-Hirschman Index (defined as <span class="math inline">\(HHI(\omega) = \sum_{i=1}^N \omega_i^2\)</span>) is a measure of market concentration and was applied in a portfolio optimization context in <span class="citation">(King <a href="#ref-king2007">2007</a>)</span>.The approach generalizes to that of the use of a modified covariance matrix in the optimization objective function. For a minimum variance portfolio with a concentration penalty:</p>
+<p><span class="math display">\[
+\min_\omega \quad \omega&#39; (\Sigma + \lambda_{c} \mathbf{I}) \omega \quad \text{s.t.} \ \omega&#39; \mathbf{1} = 1
+\]</span></p>
+<p>Where:</p>
+<ul>
+<li><span class="math inline">\(\mathbf{I}\)</span> is an identity matrix</li>
+<li><span class="math inline">\(\lambda_c\)</span> is a <em>concentration risk aversion</em> parameter</li>
+</ul>
+<p>Larger values of <span class="math inline">\(\lambda_c\)</span> produce portfolios that are less concentrated in nature, while a value of <span class="math inline">\(\lambda_c = 0\)</span> results in the unconstrained minimum variance formulation (no weight given to avoidance of concentration risk).</p>
+<p>Using a minimum variance portfolio as an example, we can observe the impact of a concentration penalty on the resulting weight of a 3 asset portfolio:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(tseries)
+<span class="kw">library</span>(quantmod)
+tickers &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;F&quot;</span>,<span class="st">&quot;MMM&quot;</span>,<span class="st">&quot;MSFT&quot;</span>)
+<span class="kw">getSymbols</span>(tickers)</code></pre></div>
+<pre><code>## [1] &quot;F&quot;    &quot;MMM&quot;  &quot;MSFT&quot;</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">dat &lt;-<span class="st"> </span><span class="kw">merge.xts</span>(F<span class="op">$</span>F.Adjusted, MMM<span class="op">$</span>MMM.Adjusted, MSFT<span class="op">$</span>MSFT.Adjusted)
+ret &lt;-<span class="st"> </span>(<span class="kw">exp</span>(<span class="kw">diff</span>(<span class="kw">log</span>(dat)))<span class="op">-</span><span class="dv">1</span>)[<span class="op">-</span><span class="dv">1</span>,]
+sigma &lt;-<span class="st"> </span><span class="kw">cov</span>(ret)
+lambda_c &lt;-<span class="st"> </span><span class="kw">seq</span>(<span class="dv">0</span>,<span class="fl">0.01</span>,<span class="dt">length.out=</span><span class="dv">50</span>)
+port_wgts &lt;-<span class="st"> </span><span class="kw">array</span>(<span class="dv">0</span>,<span class="dt">dim=</span><span class="kw">c</span>(<span class="dv">3</span>,<span class="dv">50</span>))
+<span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span><span class="kw">dim</span>(port_wgts)[<span class="dv">2</span>]) {
+  sigma_adj &lt;-<span class="st"> </span>sigma <span class="op">+</span><span class="st"> </span>lambda_c[i]<span class="op">*</span><span class="kw">diag</span>(<span class="dv">3</span>)
+  port_wgts[,i] &lt;-<span class="st"> </span>{(<span class="kw">solve</span>(sigma_adj)<span class="op">%*%</span><span class="kw">rep</span>(<span class="dv">1</span>,<span class="dv">3</span>))<span class="op">/</span>
+<span class="st">      </span><span class="kw">as.numeric</span>(<span class="kw">rep</span>(<span class="dv">1</span>,<span class="dv">3</span>)<span class="op">%*%</span><span class="kw">solve</span>(sigma_adj)<span class="op">%*%</span><span class="kw">rep</span>(<span class="dv">1</span>,<span class="dv">3</span>))}
+}
+<span class="kw">colnames</span>(port_wgts) &lt;-<span class="st"> </span><span class="kw">as.character</span>(<span class="kw">round</span>(lambda_c,<span class="dt">digits=</span><span class="dv">3</span>))
+<span class="kw">par</span>(<span class="dt">mar=</span><span class="kw">c</span>(<span class="fl">5.1</span>, <span class="fl">4.1</span>, <span class="fl">4.1</span>, <span class="fl">8.1</span>), <span class="dt">xpd=</span><span class="ot">TRUE</span>)
+<span class="kw">barplot</span>(port_wgts,
+        <span class="dt">main=</span><span class="st">&quot;Effect of Concentration Penalty on </span><span class="ch">\n</span><span class="st"> Minimum Variance Portfolio Weights&quot;</span>,
+        <span class="dt">xlab=</span><span class="st">&quot;Value of Concentration Risk Aversion Parameter&quot;</span>,
+        <span class="dt">ylab=</span><span class="st">&quot;Weight&quot;</span>,
+        <span class="dt">col=</span><span class="kw">c</span>(<span class="st">&quot;grey&quot;</span>,<span class="st">&quot;lightblue&quot;</span>,<span class="st">&quot;lightgreen&quot;</span>)
+        )
+<span class="kw">legend</span>(<span class="st">&quot;topright&quot;</span>, <span class="dt">inset=</span><span class="kw">c</span>(<span class="op">-</span><span class="fl">0.2</span>,<span class="dv">0</span>), <span class="dt">legend=</span>tickers,<span class="dt">col=</span><span class="kw">c</span>(<span class="st">&quot;grey&quot;</span>,<span class="st">&quot;lightblue&quot;</span>,<span class="st">&quot;lightgreen&quot;</span>),<span class="dt">lty=</span><span class="dv">1</span>)</code></pre></div>
+<p><img src="mqim_book_files/figure-html/unnamed-chunk-11-1.png" width="672" /></p>
+</div>
+</div>
+<div id="mean-cvar" class="section level2">
+<h2><span class="header-section-number">8.3</span> Mean-CVaR</h2>
+<p>While the standard MPT optimization approach uses variance as the measure of risk in the objective function:</p>
+<p><span class="math display">\[
+\max_\omega \quad \omega&#39; \mu - \frac{1}{2} \lambda \omega&#39; \Sigma \omega
+\]</span></p>
+<p><span class="citation">(Rockafellar and Uryasev <a href="#ref-rockafellar2000">2000</a>)</span> replaced variance with the downside risk measure <strong>Conditional Value-at-Risk (“CVaR”)</strong> - sometimes referred to as Expected Tail Loss (“ETL”):</p>
+<p><span class="math display">\[
+CVaR_\alpha = - \mathbb{E} (r|r \leq q^r(\alpha))
+\]</span></p>
+<p>Aplying this in a quadratic utility framework results in the objective function</p>
+<p><span class="math display">\[
+\max_\omega \quad \omega&#39; \mu -  \lambda \cdot \text{CVaR}_\alpha (\omega) \quad \text{s.t.} \ \omega&#39; \mathbf{1} = 1
+\]</span></p>
+<p>(TODO): Finish CVaR Section with example</p>
+</div>
+<div id="synthesis-of-pmpt-approaches" class="section level2">
+<h2><span class="header-section-number">8.4</span> Synthesis of PMPT Approaches</h2>
+<p>(TODO): Results from paper showing optimality, etc., reasons why for each approach.</p>
+
+</div>
+</div>
+<h3>References</h3>
+<div id="refs" class="references">
+<div id="ref-maillard2010">
+<p>Maillard, S., T. Roncalli, and J. Teiletche. 2010. “The Properties of Equally Weighted Risk Contribution Portfolios.” <em>The Journal of Portfolio Management</em> 36 (4): 60–70. doi:<a href="https://doi.org/https://doi.org/10.3905/jpm.2010.36.4.060">https://doi.org/10.3905/jpm.2010.36.4.060</a>.</p>
+</div>
+<div id="ref-chaves2012">
+<p>Chaves, D., J. Hsu, F. Li, and O. Shakernia. 2012. “Efficient Algorithms for Computing Risk Parity Portfolio Weights.” <em>Journal of Investing</em> 21 (3): 150–63. doi:<a href="https://doi.org/https://doi.org/10.3905/joi.2012.21.3.150">https://doi.org/10.3905/joi.2012.21.3.150</a>.</p>
+</div>
+<div id="ref-choueifaty2008">
+<p>Choueifaty, Y., and Y. Coignard. 2008. “Toward Maximum Diversification.” <em>The Journal of Portfolio Management</em> 35 (1): 40–51. doi:<a href="https://doi.org/https://doi.org/10.3905/JPM.2008.35.1.40">https://doi.org/10.3905/JPM.2008.35.1.40</a>.</p>
+</div>
+<div id="ref-king2007">
+<p>King, David. 2007. “Portfolio Optimization and Diversification.” <em>The Journal of Asset Management</em> 8 (5): 296–307. doi:<a href="https://doi.org/https://doi.org/10.1057/palgrave.jam.2250082">https://doi.org/10.1057/palgrave.jam.2250082</a>.</p>
+</div>
+<div id="ref-rockafellar2000">
+<p>Rockafellar, R. T., and S. Uryasev. 2000. “Optimization of Conditional Value-at-Risk.” <em>Journal of Risk</em> 2 (3): 21–41. doi:<a href="https://doi.org/https://doi.org/10.21314/JOR.2000.038">https://doi.org/10.21314/JOR.2000.038</a>.</p>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="risk.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="appendix1.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"google": false,
+"weibo": false,
+"instapper": false,
+"vk": false,
+"all": ["facebook", "google", "twitter", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/rstudio/bookdown-demo/edit/master/07-pmpt.Rmd",
+"text": "Edit"
+},
+"download": ["mqim_book.pdf", "mqim_book.epub"],
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "";
+    if (src === "" || src === "true") src = "https://cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:" && /^https?:/.test(src))
+      src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>
